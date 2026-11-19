@@ -24,5 +24,6 @@ scripts/
 *.md
 !AGENTS.md
 !ARCHITECTURE_SUMMARY.md
+!README.md
 !tests/**/
 !tests/**/*.md
