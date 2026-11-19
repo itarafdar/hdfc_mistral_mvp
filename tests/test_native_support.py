@@ -47,7 +47,10 @@ def test_actual_sdk_spawns_one_native_child_and_calls_its_async_tool(monkeypatch
             time.sleep(.1)
             return runner.return_value
         runner.side_effect=slow_faq
+    original_send = httpx.AsyncClient.send
     async def send(self, request, **kwargs):
+        if request.url.path.startswith('/legacy/v1/'):
+            return await original_send(self, request, **kwargs)
         assert request.url.host in ('127.0.0.1','localhost')
         payload=json.loads(request.content); calls.append(payload)
         assert payload['stream_options']=={'include_usage':True}
@@ -77,6 +80,8 @@ def test_actual_sdk_spawns_one_native_child_and_calls_its_async_tool(monkeypatch
     assert 'Parent prose' not in json.dumps(result)
     assert runner.call_count==(1 if specialist=='FAQ' else 0)
     if specialist=='FAQ': runner.assert_called_once_with(question)
+    if specialist in ('CardsGuidance','PaymentsGuidance'):
+        assert result['message'].startswith('Synthetic legacy gateway checked.')
 
 def test_actual_sdk_clarification_and_truncation(monkeypatch):
     async def send(self,request,**kwargs):

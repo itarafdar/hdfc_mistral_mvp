@@ -1,0 +1,128 @@
+{
+  "scope": "Local native SDK + synthetic gateway only; Studio/HTTP support unverified",
+  "versions": {
+    "mistralai": "3.7.0",
+    "mistralai-agents": "1.1.0",
+    "mistralai-workflows": "3.20.0"
+  },
+  "model": "ministral-3:14b",
+  "results": [
+    {
+      "operation": "temporary_deactivation",
+      "passed": true,
+      "response": {
+        "status": "guidance",
+        "message": "Synthetic legacy gateway checked. Use the authenticated bank card service, select an eligible card, complete bank-native verification, and confirm temporary deactivation there. No card action has been prepared or executed.",
+        "orchestration": "mistral_agents_native",
+        "specialist": "CardsGuidance",
+        "handoffs": 1,
+        "model_calls": {
+          "generation": 4,
+          "embedding": 0
+        }
+      },
+      "calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions#stream",
+          "method": "POST"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions#stream",
+          "method": "POST"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions#stream",
+          "method": "POST"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions#stream",
+          "method": "POST"
+        },
+        {
+          "destination": "http://127.0.0.1:8030/legacy/v1/cards/procedure",
+          "method": "POST"
+        }
+      ],
+      "seconds": 15.5438
+    },
+    {
+      "operation": "beneficiary_change",
+      "passed": true,
+      "response": {
+        "status": "guidance",
+        "message": "Synthetic legacy gateway checked. Use the authenticated bank payments service to add or change a beneficiary. Complete its required verification and review the beneficiary there before confirming.",
+        "orchestration": "mistral_agents_native",
+        "specialist": "PaymentsGuidance",
+        "handoffs": 1,
+        "model_calls": {
+          "generation": 4,
+          "embedding": 0
+        }
+      },
+      "calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions#stream",
+          "method": "POST"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions#stream",
+          "method": "POST"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions#stream",
+          "method": "POST"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions#stream",
+          "method": "POST"
+        },
+        {
+          "destination": "http://127.0.0.1:8030/legacy/v1/payments/procedure",
+          "method": "POST"
+        }
+      ],
+      "seconds": 4.7952
+    },
+    {
+      "operation": "money_transfer",
+      "passed": true,
+      "response": {
+        "status": "guidance",
+        "message": "Synthetic legacy gateway checked. Use the authenticated bank payments service to select a beneficiary, enter the amount and review the exact transfer details before bank-native verification and confirmation.",
+        "orchestration": "mistral_agents_native",
+        "specialist": "PaymentsGuidance",
+        "handoffs": 1,
+        "model_calls": {
+          "generation": 4,
+          "embedding": 0
+        }
+      },
+      "calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions#stream",
+          "method": "POST"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions#stream",
+          "method": "POST"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions#stream",
+          "method": "POST"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions#stream",
+          "method": "POST"
+        },
+        {
+          "destination": "http://127.0.0.1:8030/legacy/v1/payments/procedure",
+          "method": "POST"
+        }
+      ],
+      "seconds": 4.6393
+    }
+  ],
+  "passed": 3,
+  "failed": 0,
+  "gateway_mode": "embedded (ASGI transport, no gateway network socket)"
+}

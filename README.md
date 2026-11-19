@@ -145,3 +145,61 @@ Choose worker, model and control-plane placement separately. Current Kubernetes 
 
 **Next decision:** evaluate private Kubernetes workers with approved Studio-bound data, or Enterprise placement if that boundary is unacceptable. Prove recovery/HITL, model quality and load targets before real banking actions.
 
+
+## Controlled legacy integration demo
+
+CardsGuidance and PaymentsGuidance now call a **synthetic legacy gateway** through their existing async tools. This demonstrates an integration boundary for a card processor and payment hub; no real HDFC legacy API is connected. It retrieves service procedures and performs no customer lookup, card change, beneficiary update or transfer.
+
+```text
+/v1/customer-support → screening → Studio worker → safety → supervisor
+  → CardsGuidance.card_next_step / PaymentsGuidance.payment_next_step
+  → Python validates service + operation → mock legacy API
+  → validate response and required verification/confirmation
+  → Python-owned guidance → validated JSON / SSE final
+```
+
+| Specialist tool | Allowlisted operation | Mock endpoint |
+| --- | --- | --- |
+| `card_next_step` | `temporary_deactivation` | `POST /legacy/v1/cards/procedure` |
+| `payment_next_step` | `beneficiary_change`, `money_transfer` | `POST /legacy/v1/payments/procedure` |
+
+`legacy_gateway.py` owns routing and Pydantic contracts; `mock_legacy.py` exposes the stub services. Each specialist can call only its own tool once. The model supplies an action enum, never a URL, credential or customer identifier. The response must match the requested operation/system, say `environment: synthetic`, and require verification and confirmation. Extra fields, malformed/mismatched responses, redirects, errors and timeouts fail safely. Gateway bodies stay out of model sessions and general logs; only the existing completion marker reaches the model. Public guidance is assembled in Python. The gateway has a two-second ceiling inside the request deadline, bounded response size, and no retries or silent fallback.
+
+**Default:** `DEMO_LEGACY_GATEWAY_URL=embedded` runs the mock through an ASGI HTTP transport inside the worker, with no extra service or socket. Existing Studio startup/configuration still applies to `/v1/customer-support`. Example JSON requests:
+
+```sh
+curl -sS http://127.0.0.1:8021/v1/customer-support \
+  -H 'Content-Type: application/json' -d '{"question":"Temporarily deactivate a card."}'
+curl -sS http://127.0.0.1:8021/v1/customer-support \
+  -H 'Content-Type: application/json' -d '{"question":"I want to add a beneficiary."}'
+```
+
+The first returns `status: guidance`, `specialist: CardsGuidance`, one handoff and a message beginning `Synthetic legacy gateway checked.` It instructs secure selection, bank verification and confirmation. No card is deactivated.
+
+**Optional separate mock process:**
+
+```sh
+uv run uvicorn hdfc_mistral_mvp.mock_legacy:app --host 127.0.0.1 --port 8030
+```
+
+Set `DEMO_LEGACY_GATEWAY_URL=http://127.0.0.1:8030` in the API/worker environment and restart FastAPI. The adapter supports only this loopback demo mode; Kubernetes can use the default embedded mock. Production connectivity needs a separately approved bank adapter, service authentication and network controls.
+
+To demonstrate a separate gateway process, start it in one terminal:
+
+```sh
+uv run uvicorn hdfc_mistral_mvp.mock_legacy:app --host 127.0.0.1 --port 8030 --no-access-log
+```
+
+Set `DEMO_LEGACY_GATEWAY_URL=http://127.0.0.1:8030` in the API/worker environment and restart the API to route tools over HTTP. Inspect the gateway directly:
+
+```sh
+curl -sS http://127.0.0.1:8030/legacy/v1/cards/procedure \
+  -H 'Content-Type: application/json' \
+  -d '{"service":"cards","operation":"temporary_deactivation"}'
+```
+
+```json
+{"service":"cards","operation":"temporary_deactivation","environment":"synthetic","system":"mock_card_processor","status":"ready","verification_required":true,"confirmation_required":true,"next_step":"secure_card_service"}
+```
+
+Checks: `uv run pytest -q`. Explicit local native-agent demo: `uv run python scripts/check_legacy_agents.py --live` (three synthetic questions; requires Ollama, uses no Studio or banking writes). This direct SDK proof is separate from default Studio HTTP acceptance.

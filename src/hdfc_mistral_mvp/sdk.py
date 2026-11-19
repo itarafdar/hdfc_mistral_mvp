@@ -558,11 +558,23 @@ def _next_step(request, ctx, specialist, action):
     return _save_public_result(request, {'status':'guidance', 'message':GUIDANCE[action]})
 
 
+async def _legacy_next_step(request, ctx, specialist, service, action):
+    from .legacy_gateway import get_legacy_guidance
+    _claim_tool(request, ctx, specialist)
+    try:
+        remaining = _checked_state(request).deadline - time.time()
+        value = await get_legacy_guidance(service, action, timeout=remaining)
+        return _save_public_result(request, value)
+    except Exception:
+        # SDK tool errors may be logged: never expose gateway bodies/errors.
+        raise DemoError('Synthetic bank gateway is temporarily unavailable.') from None
+
+
 @agents.tool(input_schema=CardTask, annotations=agents.ToolAnnotations(read_only_hint=True, destructive_hint=False, open_world_hint=False))
 async def card_next_step(ctx: agents.ToolCallbackContext, /, args: CardTask, *,
                          request: Annotated[SupportSessionInput, agents.Depends()]) -> str:
-    """Get the secure next step for temporary card deactivation; never execute it."""
-    return _next_step(request, ctx, 'CardsGuidance', args.action)
+    """Read the mock card processor procedure; never deactivate a card."""
+    return await _legacy_next_step(request, ctx, 'CardsGuidance', 'cards', args.action)
 
 
 @agents.tool(input_schema=AccountTask, annotations=agents.ToolAnnotations(read_only_hint=True, destructive_hint=False, open_world_hint=False))
@@ -575,8 +587,8 @@ async def account_next_step(ctx: agents.ToolCallbackContext, /, args: AccountTas
 @agents.tool(input_schema=PaymentTask, annotations=agents.ToolAnnotations(read_only_hint=True, destructive_hint=False, open_world_hint=False))
 async def payment_next_step(ctx: agents.ToolCallbackContext, /, args: PaymentTask, *,
                             request: Annotated[SupportSessionInput, agents.Depends()]) -> str:
-    """Get the secure next step for a beneficiary change or money transfer."""
-    return _next_step(request, ctx, 'PaymentsGuidance', args.action)
+    """Read the mock payments hub procedure; never change beneficiaries or transfer funds."""
+    return await _legacy_next_step(request, ctx, 'PaymentsGuidance', 'payments', args.action)
 
 
 @agents.tool(input_schema=ProfileTask, annotations=agents.ToolAnnotations(read_only_hint=True, destructive_hint=False, open_world_hint=False))
