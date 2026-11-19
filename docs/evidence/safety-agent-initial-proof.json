@@ -1,0 +1,111 @@
+{
+  "scope": "Direct local SDK + read-only FAQ proof; NOT live Studio or live HTTP proof",
+  "python": "3.14.7",
+  "versions": {
+    "mistralai": "3.7.0",
+    "mistralai-agents": "1.1.0",
+    "mistralai-workflows": "3.20.0"
+  },
+  "model": "ministral-3:14b",
+  "passed": 4,
+  "failed": 2,
+  "results": [
+    {
+      "case": "faq",
+      "passed": false,
+      "status": "rejected",
+      "reason": "irrelevant",
+      "model_calls": {
+        "generation": 1,
+        "embedding": 0
+      },
+      "calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation"
+        }
+      ],
+      "completed_seconds": 5.9069
+    },
+    {
+      "case": "redacted-faq",
+      "passed": false,
+      "status": "rejected",
+      "reason": "irrelevant",
+      "model_calls": {
+        "generation": 1,
+        "embedding": 0
+      },
+      "calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation"
+        }
+      ],
+      "completed_seconds": 0.4115
+    },
+    {
+      "case": "irrelevant",
+      "passed": true,
+      "status": "rejected",
+      "reason": "irrelevant",
+      "model_calls": {
+        "generation": 1,
+        "embedding": 0
+      },
+      "calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation"
+        }
+      ],
+      "completed_seconds": 0.4085
+    },
+    {
+      "case": "semantic-adversarial",
+      "passed": true,
+      "status": "rejected",
+      "reason": "adversarial",
+      "model_calls": {
+        "generation": 1,
+        "embedding": 0
+      },
+      "calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation"
+        }
+      ],
+      "completed_seconds": 0.4431
+    },
+    {
+      "case": "inappropriate",
+      "passed": true,
+      "status": "rejected",
+      "reason": "adversarial",
+      "model_calls": {
+        "generation": 1,
+        "embedding": 0
+      },
+      "calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation"
+        }
+      ],
+      "completed_seconds": 0.4453
+    },
+    {
+      "case": "urgent",
+      "passed": true,
+      "status": "urgent_support",
+      "reason": null,
+      "model_calls": {
+        "generation": 0,
+        "embedding": 0
+      },
+      "calls": [],
+      "completed_seconds": 0.0001
+    }
+  ]
+}

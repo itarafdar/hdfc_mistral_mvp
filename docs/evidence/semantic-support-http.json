@@ -1,0 +1,523 @@
+{
+  "orchestration": "semantic classifier and Python dispatch; native delegation unverified",
+  "results": [
+    {
+      "case": "faq-json",
+      "passed": true,
+      "response": {
+        "status": "answered",
+        "answer": "Riverside is open on Saturdays from 10 AM to 2 PM",
+        "citations": [
+          {
+            "title": "Synthetic Riverside Branch FAQ",
+            "page": 1,
+            "chunk_id": "riverside-p1-s0-36f74945688c"
+          }
+        ],
+        "orchestration": "semantic",
+        "specialist": "FAQ",
+        "model_calls": {
+          "generation": 2,
+          "embedding": 1
+        }
+      },
+      "model_calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "classification",
+          "model": "mistral:latest"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/embeddings",
+          "kind": "embedding",
+          "operation": "embedding",
+          "model": "nomic-embed-text:latest"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "answer",
+          "model": "mistral:latest"
+        }
+      ],
+      "first_progress_seconds": null,
+      "completed_seconds": 1.9492
+    },
+    {
+      "case": "faq-sse",
+      "passed": true,
+      "response": {
+        "status": "answered",
+        "answer": "Riverside is open on Saturdays from 10 AM to 2 PM",
+        "citations": [
+          {
+            "title": "Synthetic Riverside Branch FAQ",
+            "page": 1,
+            "chunk_id": "riverside-p1-s0-36f74945688c"
+          }
+        ],
+        "orchestration": "semantic",
+        "specialist": "FAQ",
+        "model_calls": {
+          "generation": 2,
+          "embedding": 1
+        }
+      },
+      "model_calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "classification",
+          "model": "mistral:latest"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/embeddings",
+          "kind": "embedding",
+          "operation": "embedding",
+          "model": "nomic-embed-text:latest"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "answer",
+          "model": "mistral:latest"
+        }
+      ],
+      "first_progress_seconds": 0.0012,
+      "completed_seconds": 1.1224
+    },
+    {
+      "case": "faq-paraphrase",
+      "passed": true,
+      "response": {
+        "status": "answered",
+        "answer": "Riverside is open on Saturdays from 10 AM to 2 PM",
+        "citations": [
+          {
+            "title": "Synthetic Riverside Branch FAQ",
+            "page": 1,
+            "chunk_id": "riverside-p1-s0-36f74945688c"
+          }
+        ],
+        "orchestration": "semantic",
+        "specialist": "FAQ",
+        "model_calls": {
+          "generation": 2,
+          "embedding": 1
+        }
+      },
+      "model_calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "classification",
+          "model": "mistral:latest"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/embeddings",
+          "kind": "embedding",
+          "operation": "embedding",
+          "model": "nomic-embed-text:latest"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "answer",
+          "model": "mistral:latest"
+        }
+      ],
+      "first_progress_seconds": null,
+      "completed_seconds": 1.3749
+    },
+    {
+      "case": "fallback",
+      "passed": true,
+      "response": {
+        "status": "not_found",
+        "message": "I couldn\u2019t find that in the approved documents.",
+        "citations": [],
+        "orchestration": "semantic",
+        "specialist": "FAQ",
+        "model_calls": {
+          "generation": 2,
+          "embedding": 1
+        }
+      },
+      "model_calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "classification",
+          "model": "mistral:latest"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/embeddings",
+          "kind": "embedding",
+          "operation": "embedding",
+          "model": "nomic-embed-text:latest"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "answer",
+          "model": "mistral:latest"
+        }
+      ],
+      "first_progress_seconds": null,
+      "completed_seconds": 0.9343
+    },
+    {
+      "case": "cards",
+      "passed": true,
+      "response": {
+        "status": "guidance",
+        "message": "Use the authenticated bank card service, select an eligible card, complete bank-native verification, and confirm temporary deactivation there. No card action has been prepared or executed.",
+        "orchestration": "semantic",
+        "specialist": "CardsGuidance",
+        "model_calls": {
+          "generation": 1,
+          "embedding": 0
+        }
+      },
+      "model_calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "classification",
+          "model": "mistral:latest"
+        }
+      ],
+      "first_progress_seconds": null,
+      "completed_seconds": 0.2592
+    },
+    {
+      "case": "cards-paraphrase",
+      "passed": true,
+      "response": {
+        "status": "guidance",
+        "message": "Use the authenticated bank card service, select an eligible card, complete bank-native verification, and confirm temporary deactivation there. No card action has been prepared or executed.",
+        "orchestration": "semantic",
+        "specialist": "CardsGuidance",
+        "model_calls": {
+          "generation": 1,
+          "embedding": 0
+        }
+      },
+      "model_calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "classification",
+          "model": "mistral:latest"
+        }
+      ],
+      "first_progress_seconds": null,
+      "completed_seconds": 0.2587
+    },
+    {
+      "case": "cards-unseen-paraphrase",
+      "passed": true,
+      "response": {
+        "status": "guidance",
+        "message": "Use the authenticated bank card service, select an eligible card, complete bank-native verification, and confirm temporary deactivation there. No card action has been prepared or executed.",
+        "orchestration": "semantic",
+        "specialist": "CardsGuidance",
+        "model_calls": {
+          "generation": 1,
+          "embedding": 0
+        }
+      },
+      "model_calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "classification",
+          "model": "mistral:latest"
+        }
+      ],
+      "first_progress_seconds": null,
+      "completed_seconds": 0.2613
+    },
+    {
+      "case": "clarify",
+      "passed": true,
+      "response": {
+        "status": "clarification_required",
+        "message": "Do you need help with a public policy question or temporary card deactivation?",
+        "orchestration": "semantic",
+        "specialist": "clarify",
+        "model_calls": {
+          "generation": 1,
+          "embedding": 0
+        }
+      },
+      "model_calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "classification",
+          "model": "mistral:latest"
+        }
+      ],
+      "first_progress_seconds": null,
+      "completed_seconds": 0.183
+    },
+    {
+      "case": "clarify-unseen",
+      "passed": true,
+      "response": {
+        "status": "clarification_required",
+        "message": "Do you need help with a public policy question or temporary card deactivation?",
+        "orchestration": "semantic",
+        "specialist": "clarify",
+        "model_calls": {
+          "generation": 1,
+          "embedding": 0
+        }
+      },
+      "model_calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "classification",
+          "model": "mistral:latest"
+        }
+      ],
+      "first_progress_seconds": null,
+      "completed_seconds": 0.1887
+    },
+    {
+      "case": "clarify-subject",
+      "passed": true,
+      "response": {
+        "status": "clarification_required",
+        "message": "Do you need help with a public policy question or temporary card deactivation?",
+        "orchestration": "semantic",
+        "specialist": "clarify",
+        "model_calls": {
+          "generation": 1,
+          "embedding": 0
+        }
+      },
+      "model_calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "classification",
+          "model": "mistral:latest"
+        }
+      ],
+      "first_progress_seconds": null,
+      "completed_seconds": 0.2088
+    },
+    {
+      "case": "mixed",
+      "passed": true,
+      "response": {
+        "status": "clarification_required",
+        "message": "Do you need help with a public policy question or temporary card deactivation?",
+        "orchestration": "semantic",
+        "specialist": "clarify",
+        "model_calls": {
+          "generation": 1,
+          "embedding": 0
+        }
+      },
+      "model_calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "classification",
+          "model": "mistral:latest"
+        }
+      ],
+      "first_progress_seconds": null,
+      "completed_seconds": 0.2402
+    },
+    {
+      "case": "injection",
+      "passed": true,
+      "response": {
+        "status": "clarification_required",
+        "message": "Do you need help with a public policy question or temporary card deactivation?",
+        "orchestration": "semantic",
+        "specialist": "clarify",
+        "model_calls": {
+          "generation": 1,
+          "embedding": 0
+        }
+      },
+      "model_calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "classification",
+          "model": "mistral:latest"
+        }
+      ],
+      "first_progress_seconds": null,
+      "completed_seconds": 0.246
+    },
+    {
+      "case": "urgent-disabled",
+      "passed": true,
+      "response": {
+        "status": "urgent_support",
+        "message": "Contact urgent card support now. This handoff does not block a card or file a fraud report.",
+        "support_url": "https://www.hdfc.bank.in/credit-cards/block-loststolen-card",
+        "orchestration": "semantic",
+        "specialist": "urgent",
+        "model_calls": {
+          "generation": 0,
+          "embedding": 0
+        }
+      },
+      "model_calls": [],
+      "first_progress_seconds": null,
+      "completed_seconds": 0.0008
+    },
+    {
+      "case": "fraud-disabled",
+      "passed": true,
+      "response": {
+        "status": "urgent_support",
+        "message": "Contact urgent card support now. This handoff does not block a card or file a fraud report.",
+        "support_url": "https://www.hdfc.bank.in/credit-cards/block-loststolen-card",
+        "orchestration": "semantic",
+        "specialist": "urgent",
+        "model_calls": {
+          "generation": 0,
+          "embedding": 0
+        }
+      },
+      "model_calls": [],
+      "first_progress_seconds": 0.0007,
+      "completed_seconds": 0.0009
+    }
+  ],
+  "passed": 14,
+  "failed": 0,
+  "calls": [
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "classification",
+      "model": "mistral:latest"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/embeddings",
+      "kind": "embedding",
+      "operation": "embedding",
+      "model": "nomic-embed-text:latest"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "answer",
+      "model": "mistral:latest"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "classification",
+      "model": "mistral:latest"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/embeddings",
+      "kind": "embedding",
+      "operation": "embedding",
+      "model": "nomic-embed-text:latest"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "answer",
+      "model": "mistral:latest"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "classification",
+      "model": "mistral:latest"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/embeddings",
+      "kind": "embedding",
+      "operation": "embedding",
+      "model": "nomic-embed-text:latest"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "answer",
+      "model": "mistral:latest"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "classification",
+      "model": "mistral:latest"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/embeddings",
+      "kind": "embedding",
+      "operation": "embedding",
+      "model": "nomic-embed-text:latest"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "answer",
+      "model": "mistral:latest"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "classification",
+      "model": "mistral:latest"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "classification",
+      "model": "mistral:latest"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "classification",
+      "model": "mistral:latest"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "classification",
+      "model": "mistral:latest"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "classification",
+      "model": "mistral:latest"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "classification",
+      "model": "mistral:latest"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "classification",
+      "model": "mistral:latest"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "classification",
+      "model": "mistral:latest"
+    }
+  ]
+}

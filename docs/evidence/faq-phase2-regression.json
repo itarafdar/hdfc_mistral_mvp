@@ -1,0 +1,403 @@
+{
+  "results": [
+    {
+      "id": "statements-download",
+      "http_status": 200,
+      "response": {
+        "status": "answered",
+        "answer": "Customers can download electronic statements from the secure banking document centre.",
+        "citations": [
+          {
+            "title": "Synthetic Statement Policy",
+            "page": 1,
+            "chunk_id": "statements-p1-s1-0f0e8a0e61d4"
+          }
+        ]
+      },
+      "elapsed_seconds": 4.866,
+      "passed": true
+    },
+    {
+      "id": "statements-download-paraphrase",
+      "http_status": 200,
+      "response": {
+        "status": "answered",
+        "answer": "Customers can download electronic statements from the secure banking document centre.",
+        "citations": [
+          {
+            "title": "Synthetic Statement Policy",
+            "page": 1,
+            "chunk_id": "statements-p1-s1-0f0e8a0e61d4"
+          }
+        ]
+      },
+      "elapsed_seconds": 1.858,
+      "passed": true
+    },
+    {
+      "id": "statements-frequency",
+      "http_status": 200,
+      "response": {
+        "status": "answered",
+        "answer": "Electronic statements are available monthly as PDF documents.",
+        "citations": [
+          {
+            "title": "Synthetic Statement Policy",
+            "page": 1,
+            "chunk_id": "statements-p1-s0-ce4f4118e2fb"
+          }
+        ]
+      },
+      "elapsed_seconds": 1.677,
+      "passed": true
+    },
+    {
+      "id": "statements-archive",
+      "http_status": 200,
+      "response": {
+        "status": "answered",
+        "answer": "Archived statements remain available for twelve months.",
+        "citations": [
+          {
+            "title": "Synthetic Statement Policy",
+            "page": 2,
+            "chunk_id": "statements-p2-s0-884ce791baf3"
+          }
+        ]
+      },
+      "elapsed_seconds": 1.671,
+      "passed": true
+    },
+    {
+      "id": "statements-archive-paraphrase",
+      "http_status": 200,
+      "response": {
+        "status": "answered",
+        "answer": "Archived statements remain available for twelve months.",
+        "citations": [
+          {
+            "title": "Synthetic Statement Policy",
+            "page": 2,
+            "chunk_id": "statements-p2-s0-884ce791baf3"
+          }
+        ]
+      },
+      "elapsed_seconds": 1.68,
+      "passed": true
+    },
+    {
+      "id": "statements-older",
+      "http_status": 200,
+      "response": {
+        "status": "answered",
+        "answer": "For older statements, submit a service request through the secure banking help centre.",
+        "citations": [
+          {
+            "title": "Synthetic Statement Policy",
+            "page": 2,
+            "chunk_id": "statements-p2-s1-3f2ae6ed6d1c"
+          }
+        ]
+      },
+      "elapsed_seconds": 1.88,
+      "passed": true
+    },
+    {
+      "id": "complaints-ack",
+      "http_status": 200,
+      "response": {
+        "status": "answered",
+        "answer": "A complaint acknowledgement is provided within two working days.",
+        "citations": [
+          {
+            "title": "Synthetic Complaint Policy",
+            "page": 1,
+            "chunk_id": "complaints-p1-s1-5f5c4e649695"
+          }
+        ]
+      },
+      "elapsed_seconds": 1.865,
+      "passed": true
+    },
+    {
+      "id": "complaints-ack-paraphrase",
+      "http_status": 200,
+      "response": {
+        "status": "answered",
+        "answer": "A complaint acknowledgement is provided within two working days.",
+        "citations": [
+          {
+            "title": "Synthetic Complaint Policy",
+            "page": 1,
+            "chunk_id": "complaints-p1-s1-5f5c4e649695"
+          }
+        ]
+      },
+      "elapsed_seconds": 2.132,
+      "passed": true
+    },
+    {
+      "id": "complaints-escalation",
+      "http_status": 200,
+      "response": {
+        "status": "answered",
+        "answer": "Escalate unresolved complaints to the designated grievance officer after seven working days.",
+        "citations": [
+          {
+            "title": "Synthetic Complaint Policy",
+            "page": 1,
+            "chunk_id": "complaints-p1-s2-c0c21524b513"
+          }
+        ]
+      },
+      "elapsed_seconds": 2.038,
+      "passed": true
+    },
+    {
+      "id": "accessibility-request",
+      "http_status": 200,
+      "response": {
+        "status": "answered",
+        "answer": "Accessible statements can be requested in large print through the secure banking help centre.",
+        "citations": [
+          {
+            "title": "Synthetic Accessibility Policy",
+            "page": 1,
+            "chunk_id": "accessibility-p1-s0-202dcd37e263"
+          }
+        ]
+      },
+      "elapsed_seconds": 1.991,
+      "passed": true
+    },
+    {
+      "id": "accessibility-request-paraphrase",
+      "http_status": 200,
+      "response": {
+        "status": "answered",
+        "answer": "Accessible statements can be requested in large print through the secure banking help centre.",
+        "citations": [
+          {
+            "title": "Synthetic Accessibility Policy",
+            "page": 1,
+            "chunk_id": "accessibility-p1-s0-202dcd37e263"
+          }
+        ]
+      },
+      "elapsed_seconds": 1.94,
+      "passed": true
+    },
+    {
+      "id": "accessibility-font",
+      "http_status": 200,
+      "response": {
+        "status": "answered",
+        "answer": "Large print statements use a minimum font size of eighteen points.",
+        "citations": [
+          {
+            "title": "Synthetic Accessibility Policy",
+            "page": 1,
+            "chunk_id": "accessibility-p1-s1-55c66afafb62"
+          }
+        ]
+      },
+      "elapsed_seconds": 1.811,
+      "passed": true
+    },
+    {
+      "id": "riverside-saturday",
+      "http_status": 200,
+      "response": {
+        "status": "answered",
+        "answer": "Riverside is open on Saturdays from 10 AM to 2 PM under this synthetic demo schedule.",
+        "citations": [
+          {
+            "title": "Synthetic Riverside Branch FAQ",
+            "page": 1,
+            "chunk_id": "riverside-p1-s0-36f74945688c"
+          }
+        ]
+      },
+      "elapsed_seconds": 2.165,
+      "passed": true
+    },
+    {
+      "id": "riverside-saturday-paraphrase",
+      "http_status": 200,
+      "response": {
+        "status": "answered",
+        "answer": "Riverside is open on Saturdays from 10 AM to 2 PM under this synthetic demo schedule.",
+        "citations": [
+          {
+            "title": "Synthetic Riverside Branch FAQ",
+            "page": 1,
+            "chunk_id": "riverside-p1-s0-36f74945688c"
+          }
+        ]
+      },
+      "elapsed_seconds": 2.285,
+      "passed": true
+    },
+    {
+      "id": "riverside-sunday",
+      "http_status": 200,
+      "response": {
+        "status": "answered",
+        "answer": "Riverside is closed on Sundays.",
+        "citations": [
+          {
+            "title": "Synthetic Riverside Branch FAQ",
+            "page": 1,
+            "chunk_id": "riverside-p1-s1-d983a84488fd"
+          }
+        ]
+      },
+      "elapsed_seconds": 1.541,
+      "passed": true
+    },
+    {
+      "id": "complaints-retention",
+      "http_status": 200,
+      "response": {
+        "status": "not_found",
+        "message": "I couldn’t find that in the approved documents.",
+        "citations": []
+      },
+      "elapsed_seconds": 0.842,
+      "passed": true
+    },
+    {
+      "id": "statements-csv",
+      "http_status": 200,
+      "response": {
+        "status": "not_found",
+        "message": "I couldn’t find that in the approved documents.",
+        "citations": []
+      },
+      "elapsed_seconds": 0.861,
+      "passed": true
+    },
+    {
+      "id": "unsupported-loan",
+      "http_status": 200,
+      "response": {
+        "status": "not_found",
+        "message": "I couldn’t find that in the approved documents.",
+        "citations": []
+      },
+      "elapsed_seconds": 0.723,
+      "passed": true
+    },
+    {
+      "id": "ambiguous-fee",
+      "http_status": 200,
+      "response": {
+        "status": "not_found",
+        "message": "I couldn’t find that in the approved documents.",
+        "citations": []
+      },
+      "elapsed_seconds": 0.029,
+      "passed": true
+    },
+    {
+      "id": "ambiguous-time",
+      "http_status": 200,
+      "response": {
+        "status": "not_found",
+        "message": "I couldn’t find that in the approved documents.",
+        "citations": []
+      },
+      "elapsed_seconds": 0.024,
+      "passed": true
+    },
+    {
+      "id": "screen-otp",
+      "http_status": 422,
+      "response": {
+        "status": "invalid_request",
+        "message": "Enter a public policy question of 1–2,000 characters without personal data or secrets."
+      },
+      "elapsed_seconds": 0.001,
+      "passed": true
+    },
+    {
+      "id": "screen-email",
+      "http_status": 422,
+      "response": {
+        "status": "invalid_request",
+        "message": "Enter a public policy question of 1–2,000 characters without personal data or secrets."
+      },
+      "elapsed_seconds": 0.0,
+      "passed": true
+    },
+    {
+      "id": "screen-empty",
+      "http_status": 422,
+      "response": {
+        "status": "invalid_request",
+        "message": "Enter a public policy question of 1–2,000 characters without personal data or secrets."
+      },
+      "elapsed_seconds": 0.0,
+      "passed": true
+    },
+    {
+      "id": "failure-chroma",
+      "http_status": 503,
+      "response": {
+        "status": "unavailable",
+        "message": "FAQ is temporarily unavailable. Please try again shortly."
+      },
+      "elapsed_seconds": 7.982,
+      "passed": true
+    },
+    {
+      "id": "failure-ollama",
+      "http_status": 503,
+      "response": {
+        "status": "unavailable",
+        "message": "FAQ is temporarily unavailable. Please try again shortly."
+      },
+      "elapsed_seconds": 8.001,
+      "passed": true
+    },
+    {
+      "id": "updated-archive",
+      "http_status": 200,
+      "response": {
+        "status": "answered",
+        "answer": "Archived statements remain available for twenty-four months.",
+        "citations": [
+          {
+            "title": "Synthetic Statement Policy",
+            "page": 2,
+            "chunk_id": "statements-p2-updated-6fd0c58ed589"
+          }
+        ]
+      },
+      "elapsed_seconds": 2.042,
+      "passed": true
+    },
+    {
+      "id": "isolation-demo-unchanged",
+      "passed": true
+    }
+  ],
+  "passed": 27,
+  "failed": 0,
+  "sdk": "mistralai==3.7.0",
+  "embedding_model": "nomic-embed-text:latest",
+  "chat_model": "ministral-3:14b",
+  "scenario_sha256": "64bf13b4924c404d3398591a185ddd6369ad00de0a12f19b12f4633006f61645",
+  "corpus_sha256": {
+    "/Users/try-personal/Downloads/internal_projects/hdfc_mistral_mvp/demo/approved.json": "a904e21602a782fe4149457d6d653bc8c4e2ce8b77bbe5e98e2fe003053f9dc5",
+    "/Users/try-personal/Downloads/internal_projects/hdfc_mistral_mvp/demo/extractions/accessibility.json": "e713b9b53aba0ff16a6029f84f2e15dcb2f2d12073f120f0ff22798ab41bfed5",
+    "/Users/try-personal/Downloads/internal_projects/hdfc_mistral_mvp/demo/extractions/complaints.json": "bcc8e71810d31d66dd949aa82f23dc22b0ce0f812e2c1a4e2f7b76da7fce77ba",
+    "/Users/try-personal/Downloads/internal_projects/hdfc_mistral_mvp/demo/extractions/riverside.json": "6efc19d67c77e1d1734af1d3f8bd8dfd3b5e94aef9e68db1db1e896120d475f6",
+    "/Users/try-personal/Downloads/internal_projects/hdfc_mistral_mvp/demo/extractions/statements.json": "d2171adca5ed6fe782ba49e4327c925a6655f306c6947a3301a9063151e8d1ca",
+    "/Users/try-personal/Downloads/internal_projects/hdfc_mistral_mvp/demo/pdfs/accessibility.pdf": "1cf4e0ded33353355a63bd6041bf26a8a080b34445ef18179061f311e1cb54aa",
+    "/Users/try-personal/Downloads/internal_projects/hdfc_mistral_mvp/demo/pdfs/complaints.pdf": "dca7bd84c6e47a4dc7f8c0d90558437c2b777ea9355a9ea34895ec14e60d61e3",
+    "/Users/try-personal/Downloads/internal_projects/hdfc_mistral_mvp/demo/pdfs/riverside.pdf": "a8a012fe550581415e02a839ba335ed8d6496231b4d67c7fb09262a6f853806e",
+    "/Users/try-personal/Downloads/internal_projects/hdfc_mistral_mvp/demo/pdfs/statements.pdf": "060b2c891bfc3b6309278d583ea389b4e307ee8ce9d1860e507c2f3099c71945"
+  },
+  "timings": "Single HTTP smoke measurements, not percentiles or SLOs."
+}

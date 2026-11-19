@@ -1,0 +1,7 @@
+{
+  "passed": false,
+  "sdk": "mistralai==3.7.0",
+  "embedding_model": "nomic-embed-text:latest",
+  "chat_model": "mistral:latest",
+  "isolation_unchanged": true
+}

@@ -1,0 +1,93 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hdfc-support
+spec:
+  # HPA owns replicas after initial deployment.
+  selector:
+    matchLabels:
+      app: hdfc-support
+  strategy:
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: hdfc-support
+    spec:
+      automountServiceAccountToken: false
+      terminationGracePeriodSeconds: 90
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        runAsGroup: 10001
+        fsGroup: 10001
+        seccompProfile:
+          type: RuntimeDefault
+      # Repeatable demo schema initialization; no corpus ingestion on startup.
+      initContainers:
+        - name: ledger-init
+          image: hdfc-support:replace-me
+          command: ["python", "-m", "hdfc_mistral_mvp.actions"]
+          envFrom:
+            - configMapRef:
+                name: hdfc-support-config
+            - secretRef:
+                name: hdfc-support-secrets
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop: [ALL]
+          resources:
+            requests: {cpu: 100m, memory: 256Mi}
+            limits: {cpu: "1", memory: 512Mi}
+      containers:
+        - name: api
+          image: hdfc-support:replace-me
+          ports:
+            - name: http
+              containerPort: 8021
+          envFrom:
+            - configMapRef:
+                name: hdfc-support-config
+            - secretRef:
+                name: hdfc-support-secrets
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop: [ALL]
+          resources:
+            requests: {cpu: 500m, memory: 1Gi}
+            limits: {cpu: "2", memory: 2Gi}
+          startupProbe:
+            httpGet: {path: /health/live, port: http}
+            periodSeconds: 5
+            failureThreshold: 60
+          readinessProbe:
+            httpGet: {path: /health/ready, port: http}
+            periodSeconds: 5
+            failureThreshold: 3
+          livenessProbe:
+            httpGet: {path: /health/live, port: http}
+            periodSeconds: 10
+          lifecycle:
+            preStop:
+              exec:
+                command: ["python", "-c", "import time; time.sleep(5)"]
+          volumeMounts:
+            - {name: tmp, mountPath: /tmp}
+            - {name: runtime, mountPath: /home/app}
+      volumes:
+        - name: tmp
+          emptyDir: {sizeLimit: 256Mi}
+        - name: runtime
+          emptyDir: {sizeLimit: 1Gi}
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: kubernetes.io/hostname
+          whenUnsatisfiable: ScheduleAnyway
+          labelSelector:
+            matchLabels: {app: hdfc-support}

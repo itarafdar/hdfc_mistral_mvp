@@ -1,0 +1,60 @@
+{
+  "calls": [
+    {
+      "destination": "http://127.0.0.1:11434/v1/datalake/events",
+      "model": null,
+      "tools": [],
+      "turn": 1
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions#stream",
+      "model": "mistral:latest",
+      "tools": [
+        "search_tool_functions",
+        "run_typescript",
+        "wait"
+      ],
+      "turn": 2
+    }
+  ],
+  "connections": [
+    [
+      "127.0.0.1",
+      11434
+    ],
+    [
+      "127.0.0.1",
+      11434
+    ],
+    [
+      "127.0.0.1",
+      11434
+    ]
+  ],
+  "result_type": "Failed",
+  "failure_reason": "ProtocolError(message='the server returned no token usage; an OpenAI-compatible server must support stream_options.include_usage', code='completion_failed_permanently', retryable=False, details=None)",
+  "event_counts": {
+    "Notice": 1,
+    "EntryAdded": 2,
+    "EntryCompleted": 2,
+    "TurnStarted": 1,
+    "SessionUpdated": 1,
+    "TextDelta": 317,
+    "TurnEnded": 1
+  },
+  "generation_calls": 1,
+  "child_turns": 0,
+  "supervisor_continuations": 0,
+  "status": "failed local protocol compatibility; native delegation blocked",
+  "versions": {
+    "python": "3.14.7",
+    "mistralai": "3.7.0",
+    "mistralai-agents": "1.1.0",
+    "mistralai-vibe-harness": "0.1.19",
+    "mistralai-vibe-sdk": "0.14.6",
+    "httpx2": "2.16.2",
+    "ollama": "0.40.2",
+    "model": "mistral:latest",
+    "model_digest": "6577803aa9a036369e481d648a2baebb381ebc6e897f2bb9a766a2aa7bfbc1cf"
+  }
+}

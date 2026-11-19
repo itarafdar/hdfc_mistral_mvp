@@ -1,0 +1,132 @@
+{
+  "model": "ministral-3:14b",
+  "include_usage_requested": false,
+  "generation_budget": 6,
+  "calls": [
+    {
+      "destination": "http://127.0.0.1:11434/v1/datalake/events",
+      "generation": false,
+      "model": null,
+      "stream_options": null,
+      "tools": []
+    },
+    {
+      "destination": "http://127.0.0.1:11434/api/chat",
+      "generation": true,
+      "model": "ministral-3:14b",
+      "stream_options": null,
+      "tools": [
+        "search_tool_functions",
+        "run_typescript",
+        "wait"
+      ]
+    },
+    {
+      "destination": "http://127.0.0.1:11434/api/chat",
+      "generation": true,
+      "model": "ministral-3:14b",
+      "stream_options": null,
+      "tools": [
+        "search_tool_functions",
+        "run_typescript",
+        "wait"
+      ]
+    },
+    {
+      "destination": "http://127.0.0.1:11434/api/chat",
+      "generation": true,
+      "model": "ministral-3:14b",
+      "stream_options": null,
+      "tools": [
+        "search_tool_functions",
+        "run_typescript",
+        "wait"
+      ]
+    },
+    {
+      "destination": "http://127.0.0.1:11434/api/chat",
+      "generation": true,
+      "model": "ministral-3:14b",
+      "stream_options": null,
+      "tools": [
+        "search_tool_functions",
+        "run_typescript",
+        "wait"
+      ]
+    }
+  ],
+  "events": {
+    "Notice": 4,
+    "EntryAdded": 1,
+    "EntryCompleted": 1,
+    "TurnStarted": 1,
+    "SessionUpdated": 1,
+    "TurnEnded": 1
+  },
+  "native_ollama": true,
+  "merge_system": false,
+  "simple_tool": false,
+  "force_tool_requested": true,
+  "connections": [
+    [
+      "127.0.0.1",
+      11434
+    ],
+    [
+      "127.0.0.1",
+      11434
+    ],
+    [
+      "127.0.0.1",
+      11434
+    ],
+    [
+      "127.0.0.1",
+      11434
+    ],
+    [
+      "127.0.0.1",
+      11434
+    ],
+    [
+      "127.0.0.1",
+      11434
+    ]
+  ],
+  "usage_chunks": [
+    {
+      "prompt_eval_count": 2883,
+      "eval_count": 24
+    },
+    {
+      "prompt_eval_count": 3244,
+      "eval_count": 20
+    },
+    {
+      "prompt_eval_count": 3413,
+      "eval_count": 21
+    },
+    {
+      "prompt_eval_count": 2593,
+      "eval_count": 19
+    }
+  ],
+  "versions": {
+    "mistralai": "3.7.0",
+    "mistralai-agents": "1.1.0",
+    "mistralai-vibe-harness": "0.1.19",
+    "mistralai-vibe-sdk": "0.14.6",
+    "httpx2": "2.16.2"
+  },
+  "python": "3.14.7",
+  "model_available": true,
+  "ollama_version": "0.40.2",
+  "model_digest": "4760c35aeb9d9e9c6174c2492562c0b999e80a222804fd96b1915ab72bbcdcf7",
+  "root_generations_completed": 4,
+  "result_type": "Completed",
+  "failure_code": null,
+  "children_count": 0,
+  "generation_calls": 4,
+  "elapsed_seconds": 26.3019,
+  "required_check_passed": false
+}

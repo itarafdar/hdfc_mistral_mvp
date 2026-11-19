@@ -1,0 +1,319 @@
+[
+  {
+    "id": "statements-download",
+    "kind": "direct",
+    "question": "How can I download electronic statements?",
+    "http_status": 200,
+    "status": "answered",
+    "expected_fact": "Download through the secure banking document centre.",
+    "document": "statements",
+    "title": "Synthetic Statement Policy",
+    "page": 1,
+    "fact_fragments": [
+      "download electronic statements",
+      "secure banking document centre"
+    ]
+  },
+  {
+    "id": "statements-download-paraphrase",
+    "kind": "paraphrase",
+    "question": "Where do I get a PDF copy of an electronic statement?",
+    "http_status": 200,
+    "status": "answered",
+    "expected_fact": "Download through the secure banking document centre.",
+    "document": "statements",
+    "title": "Synthetic Statement Policy",
+    "page": 1,
+    "fact_fragments": [
+      "download electronic statements",
+      "secure banking document centre"
+    ]
+  },
+  {
+    "id": "statements-frequency",
+    "kind": "direct",
+    "question": "How often are electronic statements available?",
+    "http_status": 200,
+    "status": "answered",
+    "expected_fact": "Monthly.",
+    "document": "statements",
+    "title": "Synthetic Statement Policy",
+    "page": 1,
+    "fact_fragments": [
+      "monthly"
+    ]
+  },
+  {
+    "id": "statements-archive",
+    "kind": "direct",
+    "question": "How long do archived statements remain available?",
+    "http_status": 200,
+    "status": "answered",
+    "expected_fact": "Twelve months.",
+    "document": "statements",
+    "title": "Synthetic Statement Policy",
+    "page": 2,
+    "fact_fragments": [
+      "archived statements",
+      "twelve months"
+    ]
+  },
+  {
+    "id": "statements-archive-paraphrase",
+    "kind": "paraphrase",
+    "question": "For how many months can I access archived statements?",
+    "http_status": 200,
+    "status": "answered",
+    "expected_fact": "Twelve months.",
+    "document": "statements",
+    "title": "Synthetic Statement Policy",
+    "page": 2,
+    "fact_fragments": [
+      "archived statements",
+      "twelve months"
+    ]
+  },
+  {
+    "id": "statements-older",
+    "kind": "direct",
+    "question": "How do I obtain statements older than the archive period?",
+    "http_status": 200,
+    "status": "answered",
+    "expected_fact": "Submit a service request through the secure banking help centre.",
+    "document": "statements",
+    "title": "Synthetic Statement Policy",
+    "page": 2,
+    "fact_fragments": [
+      "older statements",
+      "service request",
+      "secure banking help centre"
+    ]
+  },
+  {
+    "id": "complaints-ack",
+    "kind": "direct",
+    "question": "When is a complaint acknowledgement provided?",
+    "http_status": 200,
+    "status": "answered",
+    "expected_fact": "Within two working days.",
+    "document": "complaints",
+    "title": "Synthetic Complaint Policy",
+    "page": 1,
+    "fact_fragments": [
+      "complaint acknowledgement",
+      "two working days"
+    ]
+  },
+  {
+    "id": "complaints-ack-paraphrase",
+    "kind": "paraphrase",
+    "question": "How soon will the bank acknowledge a complaint?",
+    "http_status": 200,
+    "status": "answered",
+    "expected_fact": "Within two working days.",
+    "document": "complaints",
+    "title": "Synthetic Complaint Policy",
+    "page": 1,
+    "fact_fragments": [
+      "complaint acknowledgement",
+      "two working days"
+    ]
+  },
+  {
+    "id": "complaints-escalation",
+    "kind": "direct",
+    "question": "When should an unresolved complaint be escalated?",
+    "http_status": 200,
+    "status": "answered",
+    "expected_fact": "After seven working days to the designated grievance officer.",
+    "document": "complaints",
+    "title": "Synthetic Complaint Policy",
+    "page": 1,
+    "fact_fragments": [
+      "unresolved complaints",
+      "grievance officer",
+      "seven working days"
+    ]
+  },
+  {
+    "id": "accessibility-request",
+    "kind": "direct",
+    "question": "How can I request large print statements?",
+    "http_status": 200,
+    "status": "answered",
+    "expected_fact": "Through the secure banking help centre.",
+    "document": "accessibility",
+    "title": "Synthetic Accessibility Policy",
+    "page": 1,
+    "fact_fragments": [
+      "large print",
+      "secure banking help centre"
+    ]
+  },
+  {
+    "id": "accessibility-request-paraphrase",
+    "kind": "paraphrase",
+    "question": "Where can I ask for a statement with bigger text?",
+    "http_status": 200,
+    "status": "answered",
+    "expected_fact": "Request large print through the secure banking help centre.",
+    "document": "accessibility",
+    "title": "Synthetic Accessibility Policy",
+    "page": 1,
+    "fact_fragments": [
+      "large print",
+      "secure banking help centre"
+    ]
+  },
+  {
+    "id": "accessibility-font",
+    "kind": "direct",
+    "question": "What is the minimum font size for large print statements?",
+    "http_status": 200,
+    "status": "answered",
+    "expected_fact": "Eighteen points.",
+    "document": "accessibility",
+    "title": "Synthetic Accessibility Policy",
+    "page": 1,
+    "fact_fragments": [
+      "font size",
+      "eighteen points"
+    ]
+  },
+  {
+    "id": "riverside-saturday",
+    "kind": "direct",
+    "question": "Is Riverside open on Saturdays?",
+    "http_status": 200,
+    "status": "answered",
+    "expected_fact": "Open Saturdays from 10 AM to 2 PM.",
+    "document": "riverside",
+    "title": "Synthetic Riverside Branch FAQ",
+    "page": 1,
+    "fact_fragments": [
+      "saturdays",
+      "10 am to 2 pm"
+    ]
+  },
+  {
+    "id": "riverside-saturday-paraphrase",
+    "kind": "paraphrase",
+    "question": "What are the Saturday opening times at Riverside?",
+    "http_status": 200,
+    "status": "answered",
+    "expected_fact": "Open Saturdays from 10 AM to 2 PM.",
+    "document": "riverside",
+    "title": "Synthetic Riverside Branch FAQ",
+    "page": 1,
+    "fact_fragments": [
+      "saturdays",
+      "10 am to 2 pm"
+    ]
+  },
+  {
+    "id": "riverside-sunday",
+    "kind": "direct",
+    "question": "Does Riverside open on Sundays?",
+    "http_status": 200,
+    "status": "answered",
+    "expected_fact": "Closed on Sundays.",
+    "document": "riverside",
+    "title": "Synthetic Riverside Branch FAQ",
+    "page": 1,
+    "fact_fragments": [
+      "closed on sundays"
+    ]
+  },
+  {
+    "id": "complaints-retention",
+    "kind": "insufficient",
+    "question": "How many years are complaint records retained?",
+    "http_status": 200,
+    "status": "not_found",
+    "reason": "Complaint acknowledgement/escalation do not establish record retention."
+  },
+  {
+    "id": "statements-csv",
+    "kind": "insufficient",
+    "question": "What CSV delimiter is used for electronic statement exports?",
+    "http_status": 200,
+    "status": "not_found",
+    "reason": "Policy documents PDF statements, not CSV export configuration."
+  },
+  {
+    "id": "unsupported-loan",
+    "kind": "unsupported",
+    "question": "What is the home loan interest rate?",
+    "http_status": 200,
+    "status": "not_found",
+    "reason": "No approved loan rates."
+  },
+  {
+    "id": "ambiguous-fee",
+    "kind": "ambiguous",
+    "question": "What is the fee?",
+    "http_status": 200,
+    "status": "not_found",
+    "reason": "No product/service specified; multiple fee-free services exist."
+  },
+  {
+    "id": "ambiguous-time",
+    "kind": "ambiguous",
+    "question": "How long does it take?",
+    "http_status": 200,
+    "status": "not_found",
+    "reason": "No service or event specified."
+  },
+  {
+    "id": "screen-otp",
+    "kind": "screening",
+    "question": "My OTP is 123456",
+    "http_status": 422,
+    "status": "invalid_request"
+  },
+  {
+    "id": "screen-email",
+    "kind": "screening",
+    "question": "Please reply to person@example.test",
+    "http_status": 422,
+    "status": "invalid_request"
+  },
+  {
+    "id": "screen-empty",
+    "kind": "screening",
+    "question": "   ",
+    "http_status": 422,
+    "status": "invalid_request"
+  },
+  {
+    "id": "failure-chroma",
+    "kind": "dependency",
+    "dependency": "chroma",
+    "question": "Is Riverside open on Saturdays?",
+    "http_status": 503,
+    "status": "unavailable"
+  },
+  {
+    "id": "failure-ollama",
+    "kind": "dependency",
+    "dependency": "ollama",
+    "question": "Is Riverside open on Saturdays?",
+    "http_status": 503,
+    "status": "unavailable"
+  },
+  {
+    "id": "updated-archive",
+    "kind": "update",
+    "question": "How long do archived statements remain available?",
+    "http_status": 200,
+    "status": "answered",
+    "expected_fact": "Twenty-four months in isolated updated document.",
+    "document": "statements",
+    "title": "Synthetic Statement Policy",
+    "page": 2,
+    "fact_fragments": [
+      "archived statements",
+      "twenty-four months"
+    ]
+  }
+]

@@ -1,0 +1,9 @@
+services:
+  chroma:
+    image: chromadb/chroma:1.5.5
+    ports:
+      - "127.0.0.1:${CHROMA_PORT:-8015}:8000"
+    volumes:
+      - faq_chroma:/data
+volumes:
+  faq_chroma:

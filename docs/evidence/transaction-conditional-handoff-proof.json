@@ -1,0 +1,57 @@
+{
+  "packages": {
+    "mistralai": "3.7.0",
+    "mistralai-agents": "1.1.0",
+    "mistralai-workflows": "3.20.0"
+  },
+  "python": "3.14.7",
+  "scope": "Direct local SDK proof; NOT live Studio or HTTP approval proof",
+  "result": {
+    "status": "pending_review",
+    "action_id": "5849e75a-3a20-44b2-9686-884a25ac7a96",
+    "handoff": "human_review",
+    "message": "Review is requested automatically when required. Confirm the exact prepared transfer before execution.",
+    "orchestration": "mistral_agents_native",
+    "specialist": "HighStakeTransactions",
+    "handoffs": 1,
+    "model_calls": {
+      "generation": 3,
+      "embedding": 0
+    }
+  },
+  "passed": true,
+  "preparation_passed": true,
+  "calls": [
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "model": "ministral-3:14b",
+      "stream": true,
+      "messages": 2
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "model": "ministral-3:14b",
+      "stream": true,
+      "messages": 2
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "model": "ministral-3:14b",
+      "stream": true,
+      "messages": 4
+    }
+  ],
+  "tool_checks": [
+    {
+      "specialist": null,
+      "tool": "agents.spawn",
+      "guard_result": "PreToolCallHookContinue"
+    },
+    {
+      "specialist": "HighStakeTransactions",
+      "tool": "transaction_next_step",
+      "guard_result": "NoneType"
+    }
+  ],
+  "completed_seconds": 15.8566
+}

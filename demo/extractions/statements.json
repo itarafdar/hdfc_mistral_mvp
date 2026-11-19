@@ -1,0 +1,16 @@
+{
+  "document": "statements",
+  "title": "Synthetic Statement Policy",
+  "sha256": "060b2c891bfc3b6309278d583ea389b4e307ee8ce9d1860e507c2f3099c71945",
+  "provenance": "reviewed synthetic transcription; not hosted OCR output",
+  "pages": [
+    {
+      "page": 1,
+      "text": "Electronic statements are available monthly as PDF documents. Customers can download electronic statements from the secure banking document centre. Statement downloads have no fee under this synthetic policy."
+    },
+    {
+      "page": 2,
+      "text": "Archived statements remain available for twelve months. For older statements, submit a service request through the secure banking help centre. This policy contains no customer records."
+    }
+  ]
+}

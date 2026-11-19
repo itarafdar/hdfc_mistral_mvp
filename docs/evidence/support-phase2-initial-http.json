@@ -1,0 +1,1161 @@
+{
+  "orchestration": "Mistral Agents SDK native named subagents; secure guidance only",
+  "results": [
+    {
+      "case": "faq-json",
+      "passed": false,
+      "expected_status": "answered",
+      "http_status": 503,
+      "response": {
+        "status": "unavailable",
+        "message": "FAQ is temporarily unavailable. Please try again shortly.",
+        "support": {
+          "status": "urgent_support",
+          "message": "Contact urgent card support now. This handoff does not block a card or file a fraud report.",
+          "support_url": "https://www.hdfc.bank.in/credit-cards/block-loststolen-card"
+        }
+      },
+      "model_calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "child",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/embeddings",
+          "kind": "embedding",
+          "operation": "embedding",
+          "model": "nomic-embed-text:latest"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "answer",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        }
+      ],
+      "completed_seconds": 19.3811
+    },
+    {
+      "case": "faq-sse",
+      "passed": false,
+      "expected_status": "answered",
+      "http_status": 200,
+      "response": {
+        "status": "unavailable",
+        "code": "support_unavailable",
+        "message": "FAQ is temporarily unavailable. Please try again shortly.",
+        "support": {
+          "status": "urgent_support",
+          "message": "Contact urgent card support now. This handoff does not block a card or file a fraud report.",
+          "support_url": "https://www.hdfc.bank.in/credit-cards/block-loststolen-card"
+        }
+      },
+      "model_calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "child",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/embeddings",
+          "kind": "embedding",
+          "operation": "embedding",
+          "model": "nomic-embed-text:latest"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "answer",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        }
+      ],
+      "completed_seconds": 17.8845
+    },
+    {
+      "case": "faq-paraphrase",
+      "passed": false,
+      "expected_status": "answered",
+      "http_status": 503,
+      "response": {
+        "status": "unavailable",
+        "message": "FAQ is temporarily unavailable. Please try again shortly.",
+        "support": {
+          "status": "urgent_support",
+          "message": "Contact urgent card support now. This handoff does not block a card or file a fraud report.",
+          "support_url": "https://www.hdfc.bank.in/credit-cards/block-loststolen-card"
+        }
+      },
+      "model_calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "child",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/embeddings",
+          "kind": "embedding",
+          "operation": "embedding",
+          "model": "nomic-embed-text:latest"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "answer",
+          "model": "ministral-3:14b"
+        }
+      ],
+      "completed_seconds": 11.8217
+    },
+    {
+      "case": "fallback",
+      "passed": false,
+      "expected_status": "not_found",
+      "http_status": 503,
+      "response": {
+        "status": "unavailable",
+        "message": "FAQ is temporarily unavailable. Please try again shortly.",
+        "support": {
+          "status": "urgent_support",
+          "message": "Contact urgent card support now. This handoff does not block a card or file a fraud report.",
+          "support_url": "https://www.hdfc.bank.in/credit-cards/block-loststolen-card"
+        }
+      },
+      "model_calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        }
+      ],
+      "completed_seconds": 6.0336
+    },
+    {
+      "case": "cards",
+      "passed": true,
+      "http_status": 200,
+      "response": {
+        "status": "guidance",
+        "message": "Use the authenticated bank card service, select an eligible card, complete bank-native verification, and confirm temporary deactivation there. No card action has been prepared or executed.",
+        "orchestration": "mistral_agents_native",
+        "specialist": "CardsGuidance",
+        "handoffs": 1,
+        "model_calls": {
+          "generation": 5,
+          "embedding": 0
+        }
+      },
+      "model_calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "child",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        }
+      ],
+      "first_progress_seconds": null,
+      "completed_seconds": 8.9283
+    },
+    {
+      "case": "cards-paraphrase",
+      "passed": true,
+      "http_status": 200,
+      "response": {
+        "status": "guidance",
+        "message": "Use the authenticated bank card service, select an eligible card, complete bank-native verification, and confirm temporary deactivation there. No card action has been prepared or executed.",
+        "orchestration": "mistral_agents_native",
+        "specialist": "CardsGuidance",
+        "handoffs": 1,
+        "model_calls": {
+          "generation": 3,
+          "embedding": 0
+        }
+      },
+      "model_calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "child",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        }
+      ],
+      "first_progress_seconds": null,
+      "completed_seconds": 5.2721
+    },
+    {
+      "case": "cards-unseen-paraphrase",
+      "passed": true,
+      "http_status": 200,
+      "response": {
+        "status": "guidance",
+        "message": "Use the authenticated bank card service, select an eligible card, complete bank-native verification, and confirm temporary deactivation there. No card action has been prepared or executed.",
+        "orchestration": "mistral_agents_native",
+        "specialist": "CardsGuidance",
+        "handoffs": 1,
+        "model_calls": {
+          "generation": 4,
+          "embedding": 0
+        }
+      },
+      "model_calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "child",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        }
+      ],
+      "first_progress_seconds": null,
+      "completed_seconds": 7.308
+    },
+    {
+      "case": "account-balance",
+      "passed": true,
+      "http_status": 200,
+      "response": {
+        "status": "guidance",
+        "message": "Sign in to the bank account service and select an account there to view a verified balance. Account data is available only in that secure service.",
+        "orchestration": "mistral_agents_native",
+        "specialist": "AccountGuidance",
+        "handoffs": 1,
+        "model_calls": {
+          "generation": 3,
+          "embedding": 0
+        }
+      },
+      "model_calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "child",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        }
+      ],
+      "first_progress_seconds": null,
+      "completed_seconds": 5.4094
+    },
+    {
+      "case": "account-statements",
+      "passed": true,
+      "http_status": 200,
+      "response": {
+        "status": "guidance",
+        "message": "Sign in to the bank account service, select an account and statement period, and download the statement there.",
+        "orchestration": "mistral_agents_native",
+        "specialist": "AccountGuidance",
+        "handoffs": 1,
+        "model_calls": {
+          "generation": 4,
+          "embedding": 0
+        }
+      },
+      "model_calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "child",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        }
+      ],
+      "first_progress_seconds": null,
+      "completed_seconds": 8.2941
+    },
+    {
+      "case": "payments-beneficiary",
+      "passed": true,
+      "http_status": 200,
+      "response": {
+        "status": "guidance",
+        "message": "Use the authenticated bank payments service to add or change a beneficiary. Complete its required verification and review the beneficiary there before confirming.",
+        "orchestration": "mistral_agents_native",
+        "specialist": "PaymentsGuidance",
+        "handoffs": 1,
+        "model_calls": {
+          "generation": 5,
+          "embedding": 0
+        }
+      },
+      "model_calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "child",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        }
+      ],
+      "first_progress_seconds": null,
+      "completed_seconds": 9.4327
+    },
+    {
+      "case": "payments-transfer",
+      "passed": false,
+      "expected_status": "guidance",
+      "http_status": 200,
+      "response": {
+        "status": "unavailable",
+        "code": "support_unavailable",
+        "message": "FAQ is temporarily unavailable. Please try again shortly.",
+        "support": {
+          "status": "urgent_support",
+          "message": "Contact urgent card support now. This handoff does not block a card or file a fraud report.",
+          "support_url": "https://www.hdfc.bank.in/credit-cards/block-loststolen-card"
+        }
+      },
+      "model_calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        }
+      ],
+      "completed_seconds": 11.2722
+    },
+    {
+      "case": "profile-contact",
+      "passed": true,
+      "http_status": 200,
+      "response": {
+        "status": "guidance",
+        "message": "Use the authenticated bank profile service to change contact details. Complete its verification and confirm the exact changes in that secure service.",
+        "orchestration": "mistral_agents_native",
+        "specialist": "ProfileGuidance",
+        "handoffs": 1,
+        "model_calls": {
+          "generation": 4,
+          "embedding": 0
+        }
+      },
+      "model_calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "child",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        }
+      ],
+      "first_progress_seconds": null,
+      "completed_seconds": 7.5956
+    },
+    {
+      "case": "profile-limit",
+      "passed": true,
+      "http_status": 200,
+      "response": {
+        "status": "guidance",
+        "message": "Use the authenticated bank card service to review an eligible card and request a limit change. Eligibility, verification and any staff review are handled there.",
+        "orchestration": "mistral_agents_native",
+        "specialist": "ProfileGuidance",
+        "handoffs": 1,
+        "model_calls": {
+          "generation": 4,
+          "embedding": 0
+        }
+      },
+      "model_calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "child",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        }
+      ],
+      "first_progress_seconds": null,
+      "completed_seconds": 7.3484
+    },
+    {
+      "case": "clarify",
+      "passed": true,
+      "http_status": 200,
+      "response": {
+        "status": "clarification_required",
+        "message": "Please choose one: a public policy question, temporary card deactivation, account access, payments, or profile changes.",
+        "orchestration": "mistral_agents_native",
+        "specialist": "clarify",
+        "handoffs": 0,
+        "model_calls": {
+          "generation": 1,
+          "embedding": 0
+        }
+      },
+      "model_calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        }
+      ],
+      "first_progress_seconds": null,
+      "completed_seconds": 0.8829
+    },
+    {
+      "case": "clarify-unseen",
+      "passed": false,
+      "expected_status": "clarification_required",
+      "http_status": 503,
+      "response": {
+        "status": "unavailable",
+        "message": "FAQ is temporarily unavailable. Please try again shortly.",
+        "support": {
+          "status": "urgent_support",
+          "message": "Contact urgent card support now. This handoff does not block a card or file a fraud report.",
+          "support_url": "https://www.hdfc.bank.in/credit-cards/block-loststolen-card"
+        }
+      },
+      "model_calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        }
+      ],
+      "completed_seconds": 2.1972
+    },
+    {
+      "case": "clarify-subject",
+      "passed": true,
+      "http_status": 200,
+      "response": {
+        "status": "clarification_required",
+        "message": "Please choose one: a public policy question, temporary card deactivation, account access, payments, or profile changes.",
+        "orchestration": "mistral_agents_native",
+        "specialist": "clarify",
+        "handoffs": 0,
+        "model_calls": {
+          "generation": 1,
+          "embedding": 0
+        }
+      },
+      "model_calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        }
+      ],
+      "first_progress_seconds": null,
+      "completed_seconds": 0.4476
+    },
+    {
+      "case": "mixed",
+      "passed": false,
+      "expected_status": "clarification_required",
+      "http_status": 503,
+      "response": {
+        "status": "unavailable",
+        "message": "FAQ is temporarily unavailable. Please try again shortly.",
+        "support": {
+          "status": "urgent_support",
+          "message": "Contact urgent card support now. This handoff does not block a card or file a fraud report.",
+          "support_url": "https://www.hdfc.bank.in/credit-cards/block-loststolen-card"
+        }
+      },
+      "model_calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        }
+      ],
+      "completed_seconds": 11.4083
+    },
+    {
+      "case": "injection",
+      "passed": false,
+      "expected_status": "clarification_required",
+      "http_status": 503,
+      "response": {
+        "status": "unavailable",
+        "message": "FAQ is temporarily unavailable. Please try again shortly.",
+        "support": {
+          "status": "urgent_support",
+          "message": "Contact urgent card support now. This handoff does not block a card or file a fraud report.",
+          "support_url": "https://www.hdfc.bank.in/credit-cards/block-loststolen-card"
+        }
+      },
+      "model_calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation",
+          "operation": "supervisor",
+          "model": "ministral-3:14b"
+        }
+      ],
+      "completed_seconds": 3.4119
+    },
+    {
+      "case": "urgent-disabled",
+      "passed": true,
+      "http_status": 200,
+      "response": {
+        "status": "urgent_support",
+        "message": "Contact urgent card support now. This handoff does not block a card or file a fraud report.",
+        "support_url": "https://www.hdfc.bank.in/credit-cards/block-loststolen-card"
+      },
+      "model_calls": [],
+      "first_progress_seconds": null,
+      "completed_seconds": 0.0008
+    },
+    {
+      "case": "fraud-disabled",
+      "passed": true,
+      "http_status": 200,
+      "response": {
+        "status": "urgent_support",
+        "message": "Contact urgent card support now. This handoff does not block a card or file a fraud report.",
+        "support_url": "https://www.hdfc.bank.in/credit-cards/block-loststolen-card"
+      },
+      "model_calls": [],
+      "first_progress_seconds": 0.0006,
+      "completed_seconds": 0.0008
+    }
+  ],
+  "passed": 12,
+  "failed": 8,
+  "calls": [
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "child",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/embeddings",
+      "kind": "embedding",
+      "operation": "embedding",
+      "model": "nomic-embed-text:latest"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "answer",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "child",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/embeddings",
+      "kind": "embedding",
+      "operation": "embedding",
+      "model": "nomic-embed-text:latest"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "answer",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "child",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/embeddings",
+      "kind": "embedding",
+      "operation": "embedding",
+      "model": "nomic-embed-text:latest"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "answer",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "child",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "child",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "child",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "child",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "child",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "child",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "child",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "child",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation",
+      "operation": "supervisor",
+      "model": "ministral-3:14b"
+    }
+  ]
+}

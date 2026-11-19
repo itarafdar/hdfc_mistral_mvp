@@ -1,0 +1,151 @@
+{
+  "scope": "Direct local SDK + read-only FAQ proof; NOT live Studio or live HTTP proof",
+  "python": "3.14.7",
+  "versions": {
+    "mistralai": "3.7.0",
+    "mistralai-agents": "1.1.0",
+    "mistralai-workflows": "3.20.0"
+  },
+  "model": "ministral-3:14b",
+  "passed": 6,
+  "failed": 0,
+  "results": [
+    {
+      "case": "faq",
+      "passed": true,
+      "status": "answered",
+      "reason": null,
+      "model_calls": {
+        "generation": 5,
+        "embedding": 1
+      },
+      "calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/embeddings",
+          "kind": "embedding"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation"
+        }
+      ],
+      "completed_seconds": 13.8746
+    },
+    {
+      "case": "redacted-faq",
+      "passed": true,
+      "status": "answered",
+      "reason": null,
+      "model_calls": {
+        "generation": 5,
+        "embedding": 1
+      },
+      "calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/embeddings",
+          "kind": "embedding"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation"
+        }
+      ],
+      "completed_seconds": 8.2766
+    },
+    {
+      "case": "irrelevant",
+      "passed": true,
+      "status": "rejected",
+      "reason": "irrelevant",
+      "model_calls": {
+        "generation": 1,
+        "embedding": 0
+      },
+      "calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation"
+        }
+      ],
+      "completed_seconds": 1.0078
+    },
+    {
+      "case": "semantic-adversarial",
+      "passed": true,
+      "status": "rejected",
+      "reason": "adversarial",
+      "model_calls": {
+        "generation": 1,
+        "embedding": 0
+      },
+      "calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation"
+        }
+      ],
+      "completed_seconds": 0.432
+    },
+    {
+      "case": "inappropriate",
+      "passed": true,
+      "status": "rejected",
+      "reason": "adversarial",
+      "model_calls": {
+        "generation": 1,
+        "embedding": 0
+      },
+      "calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation"
+        }
+      ],
+      "completed_seconds": 0.4273
+    },
+    {
+      "case": "urgent",
+      "passed": true,
+      "status": "urgent_support",
+      "reason": null,
+      "model_calls": {
+        "generation": 0,
+        "embedding": 0
+      },
+      "calls": [],
+      "completed_seconds": 0.0
+    }
+  ]
+}

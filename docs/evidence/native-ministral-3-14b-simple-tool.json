@@ -1,0 +1,126 @@
+{
+  "model": "ministral-3:14b",
+  "include_usage_requested": false,
+  "generation_budget": 4,
+  "calls": [
+    {
+      "destination": "http://127.0.0.1:11434/v1/datalake/events",
+      "generation": false,
+      "model": null,
+      "stream_options": null,
+      "tools": []
+    },
+    {
+      "destination": "http://127.0.0.1:11434/api/chat",
+      "generation": true,
+      "model": "ministral-3:14b",
+      "stream_options": null,
+      "tools": [
+        "synthetic_probe"
+      ]
+    },
+    {
+      "destination": "http://127.0.0.1:11434/api/chat",
+      "generation": true,
+      "model": "ministral-3:14b",
+      "stream_options": null,
+      "tools": [
+        "synthetic_probe"
+      ]
+    }
+  ],
+  "events": {
+    "Notice": 1,
+    "EntryAdded": 4,
+    "EntryCompleted": 4,
+    "TurnStarted": 1,
+    "SessionUpdated": 1,
+    "TextDelta": 34,
+    "TurnEnded": 1
+  },
+  "native_ollama": true,
+  "merge_system": false,
+  "simple_tool": true,
+  "force_tool_requested": false,
+  "connections": [
+    [
+      "127.0.0.1",
+      11434
+    ],
+    [
+      "127.0.0.1",
+      11434
+    ],
+    [
+      "127.0.0.1",
+      11434
+    ],
+    [
+      "127.0.0.1",
+      11434
+    ]
+  ],
+  "usage_chunks": [
+    {
+      "prompt_eval_count": 269,
+      "eval_count": 8
+    },
+    {
+      "prompt_eval_count": 289,
+      "eval_count": 35
+    }
+  ],
+  "versions": {
+    "mistralai": "3.7.0",
+    "mistralai-agents": "1.1.0",
+    "mistralai-vibe-harness": "0.1.19",
+    "mistralai-vibe-sdk": "0.14.6",
+    "httpx2": "2.16.2"
+  },
+  "python": "3.14.7",
+  "model_available": true,
+  "ollama_version": "0.40.2",
+  "model_digest": "129e04c05b562f6e6ea7ec07ef0b0a61ef1aeaedb91ac524e67a1672eba7bb36",
+  "root_generations_completed": 2,
+  "entry_names": [
+    "client.synthetic_probe",
+    "client.synthetic_probe",
+    "client.synthetic_probe",
+    "client.synthetic_probe"
+  ],
+  "tool_outcomes": [
+    {
+      "event": "EntryAdded",
+      "entry_type": "ToolCallEntry",
+      "name": "client.synthetic_probe",
+      "is_error": null,
+      "argument_keys": []
+    },
+    {
+      "event": "EntryCompleted",
+      "entry_type": "ToolCallEntry",
+      "name": "client.synthetic_probe",
+      "is_error": null,
+      "argument_keys": []
+    },
+    {
+      "event": "EntryAdded",
+      "entry_type": "ToolResultEntry",
+      "name": "client.synthetic_probe",
+      "is_error": false
+    },
+    {
+      "event": "EntryCompleted",
+      "entry_type": "ToolResultEntry",
+      "name": "client.synthetic_probe",
+      "is_error": false
+    }
+  ],
+  "simple_tool_invocations": 1,
+  "result_type": "Completed",
+  "failure_code": null,
+  "children_count": 0,
+  "generation_calls": 2,
+  "elapsed_seconds": 3.0811,
+  "required_check_passed": true
+}

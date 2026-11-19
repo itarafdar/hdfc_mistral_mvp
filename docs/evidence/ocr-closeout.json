@@ -1,0 +1,27 @@
+{
+  "date_ist": "2026-11-16",
+  "verified": false,
+  "http_status": 429,
+  "attempts": 1,
+  "automatic_retries": false,
+  "command": ".venv/bin/python -m hdfc_mistral_mvp.cli ocr --document riverside --allow-hosted-ocr",
+  "sdk": "mistralai==3.7.0",
+  "method": "client.ocr.process",
+  "model": "mistral-ocr-4-1",
+  "endpoint": "https://api.mistral.ai/v1/ocr",
+  "approved_document": "riverside",
+  "pdf_sha256": "a8a012fe550581415e02a839ba335ed8d6496231b4d67c7fb09262a6f853806e",
+  "pdf_bytes": 105394,
+  "synthetic_pages": 1,
+  "sanitized_error": "Hosted OCR failed (HTTP 429). No numeric Retry-After was supplied.",
+  "retry_guidance": "Check OCR pages/minute and organization/workspace spending limits and billing activation in the Mistral Admin Panel. Use bounded backoff for transient throttling; no automatic retry was performed.",
+  "limits_note": "Official OCR cookbook gives typical approximately 50 MB / 1000 pages per request. Account-specific OCR quotas can include pages per minute and were not inspected.",
+  "official_sources": [
+    "https://docs.mistral.ai/admin/billing-usage/usage-limits",
+    "https://docs.mistral.ai/resources/cookbooks/mistral-ocr-documentchunking-document_chunking_cookbook",
+    "https://docs.mistral.ai/resources/error-glossary",
+    "https://docs.mistral.ai/models/ocr-4-1",
+    "https://docs.mistral.ai/studio/document-processing/basic_ocr"
+  ],
+  "scan_to_citation": "Unverified: no successful extraction was returned, so no OCR-derived text was ingested. Fixture-backed RAG and separate new-document proof are independent."
+}

@@ -1,0 +1,65 @@
+{
+  "calls": [
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "model": "ministral-3:14b",
+      "tools": [
+        "search_tool_functions",
+        "run_typescript",
+        "wait"
+      ]
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "model": "ministral-3:14b",
+      "tools": []
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "model": "ministral-3:14b",
+      "tools": [
+        "search_tool_functions",
+        "run_typescript",
+        "wait"
+      ]
+    }
+  ],
+  "tools": [
+    {
+      "name": "agents.spawn",
+      "keys": [
+        "config_name",
+        "message",
+        "name"
+      ]
+    },
+    {
+      "name": "self.wait",
+      "keys": [
+        "deadline_unix_ms",
+        "timeout_ms"
+      ]
+    }
+  ],
+  "children": 1,
+  "replies": [
+    {
+      "session": "28902d88-9fee-4afb-95a2-eb90e72a546e",
+      "finish": "tool_call",
+      "text_marker": false
+    },
+    {
+      "session": "01a1e9df-230a-7cfe-9a09-65df3e11c309",
+      "finish": "stop",
+      "text_marker": true
+    },
+    {
+      "session": "28902d88-9fee-4afb-95a2-eb90e72a546e",
+      "finish": "tool_call",
+      "text_marker": false
+    }
+  ],
+  "result": "Completed",
+  "final_marker": false,
+  "seconds": 9.0642
+}

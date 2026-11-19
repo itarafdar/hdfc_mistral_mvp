@@ -1,0 +1,66 @@
+{
+  "model": "mistral:latest",
+  "include_usage_requested": false,
+  "generation_budget": 3,
+  "calls": [
+    {
+      "destination": "http://127.0.0.1:11434/v1/datalake/events",
+      "generation": false,
+      "model": null,
+      "stream_options": null,
+      "tools": []
+    },
+    {
+      "destination": "http://127.0.0.1:11434/api/chat",
+      "generation": true,
+      "model": "mistral:latest",
+      "stream_options": null,
+      "tools": [
+        "synthetic_probe"
+      ]
+    }
+  ],
+  "events": {
+    "Notice": 1,
+    "EntryAdded": 2,
+    "EntryCompleted": 2,
+    "TurnStarted": 1,
+    "SessionUpdated": 1,
+    "TextDelta": 59,
+    "TurnEnded": 1
+  },
+  "native_ollama": true,
+  "merge_system": false,
+  "simple_tool": true,
+  "connections": [
+    [
+      "127.0.0.1",
+      11434
+    ],
+    [
+      "127.0.0.1",
+      11434
+    ]
+  ],
+  "usage_chunks": [
+    {
+      "prompt_eval_count": 278,
+      "eval_count": 61
+    }
+  ],
+  "versions": {
+    "mistralai": "3.7.0",
+    "mistralai-agents": "1.1.0",
+    "mistralai-vibe-harness": "0.1.19",
+    "mistralai-vibe-sdk": "0.14.6",
+    "httpx2": "2.16.2"
+  },
+  "python": "3.14.7",
+  "root_generations_completed": 1,
+  "result_type": "Completed",
+  "failure_reason": "None",
+  "children_count": 0,
+  "generation_calls": 1,
+  "elapsed_seconds": 4.2288,
+  "required_check_passed": false
+}

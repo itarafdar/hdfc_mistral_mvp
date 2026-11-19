@@ -1,0 +1,32 @@
+{
+  "model": "mistral-nemo:12b",
+  "include_usage_requested": false,
+  "generation_budget": 6,
+  "calls": [],
+  "events": {},
+  "native_ollama": true,
+  "merge_system": false,
+  "simple_tool": false,
+  "force_tool_requested": false,
+  "connections": [
+    [
+      "127.0.0.1",
+      11434
+    ]
+  ],
+  "usage_chunks": [],
+  "versions": {
+    "mistralai": "3.7.0",
+    "mistralai-agents": "1.1.0",
+    "mistralai-vibe-harness": "0.1.19",
+    "mistralai-vibe-sdk": "0.14.6",
+    "httpx2": "2.16.2"
+  },
+  "python": "3.14.7",
+  "model_available": false,
+  "ollama_version": "0.40.2",
+  "blocker": "Requested local model is not installed. Complete the explicit ollama pull first.",
+  "generation_calls": 0,
+  "elapsed_seconds": 1.1011,
+  "required_check_passed": false
+}

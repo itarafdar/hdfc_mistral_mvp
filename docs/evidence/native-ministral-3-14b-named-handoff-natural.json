@@ -1,0 +1,273 @@
+{
+  "model": "ministral-3:14b",
+  "include_usage_requested": false,
+  "generation_budget": 6,
+  "calls": [
+    {
+      "destination": "http://127.0.0.1:11434/v1/datalake/events",
+      "generation": false,
+      "model": null,
+      "stream_options": null,
+      "tools": []
+    },
+    {
+      "destination": "http://127.0.0.1:11434/api/chat",
+      "generation": true,
+      "model": "ministral-3:14b",
+      "stream_options": null,
+      "tools": [
+        "search_tool_functions",
+        "run_typescript",
+        "wait"
+      ]
+    },
+    {
+      "destination": "http://127.0.0.1:11434/api/chat",
+      "generation": true,
+      "model": "ministral-3:14b",
+      "stream_options": null,
+      "tools": [
+        "search_tool_functions",
+        "run_typescript",
+        "wait"
+      ]
+    },
+    {
+      "destination": "http://127.0.0.1:11434/api/chat",
+      "generation": true,
+      "model": "ministral-3:14b",
+      "stream_options": null,
+      "tools": [
+        "search_tool_functions",
+        "run_typescript",
+        "wait"
+      ]
+    },
+    {
+      "destination": "http://127.0.0.1:11434/api/chat",
+      "generation": true,
+      "model": "ministral-3:14b",
+      "stream_options": null,
+      "tools": []
+    },
+    {
+      "destination": "http://127.0.0.1:11434/api/chat",
+      "generation": true,
+      "model": "ministral-3:14b",
+      "stream_options": null,
+      "tools": [
+        "search_tool_functions",
+        "run_typescript",
+        "wait"
+      ]
+    }
+  ],
+  "events": {
+    "Notice": 2,
+    "EntryAdded": 9,
+    "EntryCompleted": 9,
+    "TurnStarted": 1,
+    "SessionUpdated": 1,
+    "TextDelta": 17,
+    "TurnUpdated": 1,
+    "TurnEnded": 1
+  },
+  "native_ollama": true,
+  "merge_system": false,
+  "simple_tool": false,
+  "force_tool_requested": false,
+  "connections": [
+    [
+      "127.0.0.1",
+      11434
+    ],
+    [
+      "127.0.0.1",
+      11434
+    ],
+    [
+      "127.0.0.1",
+      11434
+    ],
+    [
+      "127.0.0.1",
+      11434
+    ],
+    [
+      "127.0.0.1",
+      11434
+    ],
+    [
+      "127.0.0.1",
+      11434
+    ],
+    [
+      "127.0.0.1",
+      11434
+    ]
+  ],
+  "usage_chunks": [
+    {
+      "prompt_eval_count": 3133,
+      "eval_count": 22
+    },
+    {
+      "prompt_eval_count": 3395,
+      "eval_count": 87
+    },
+    {
+      "prompt_eval_count": 3867,
+      "eval_count": 89
+    },
+    {
+      "prompt_eval_count": 335,
+      "eval_count": 7
+    },
+    {
+      "prompt_eval_count": 3970,
+      "eval_count": 15
+    }
+  ],
+  "versions": {
+    "mistralai": "3.7.0",
+    "mistralai-agents": "1.1.0",
+    "mistralai-vibe-harness": "0.1.19",
+    "mistralai-vibe-sdk": "0.14.6",
+    "httpx2": "2.16.2"
+  },
+  "python": "3.14.7",
+  "model_available": true,
+  "ollama_version": "0.40.2",
+  "model_digest": "129e04c05b562f6e6ea7ec07ef0b0a61ef1aeaedb91ac524e67a1672eba7bb36",
+  "root_generations_completed": 4,
+  "entry_names": [
+    "agents.spawn",
+    "agents.spawn",
+    "agents.spawn",
+    "agents.spawn",
+    "agents.spawn",
+    "agents.spawn",
+    "agents.spawn",
+    "agents.spawn",
+    "wait",
+    "wait",
+    "wait",
+    "wait"
+  ],
+  "tool_outcomes": [
+    {
+      "event": "EntryAdded",
+      "entry_type": "ToolCallEntry",
+      "name": "agents.spawn",
+      "is_error": null,
+      "argument_keys": [
+        "config_name",
+        "instructions",
+        "message",
+        "name"
+      ],
+      "matches_expected": {
+        "name_FAQ": true,
+        "config_name_FAQ": true,
+        "message_marker": true,
+        "instructions_marker": true
+      }
+    },
+    {
+      "event": "EntryCompleted",
+      "entry_type": "ToolCallEntry",
+      "name": "agents.spawn",
+      "is_error": null,
+      "argument_keys": [
+        "config_name",
+        "instructions",
+        "message",
+        "name"
+      ],
+      "matches_expected": {
+        "name_FAQ": true,
+        "config_name_FAQ": true,
+        "message_marker": true,
+        "instructions_marker": true
+      }
+    },
+    {
+      "event": "EntryAdded",
+      "entry_type": "ToolResultEntry",
+      "name": "agents.spawn",
+      "is_error": true,
+      "error_kind": "config",
+      "error_fields": [
+        "name",
+        "config_name",
+        "instructions"
+      ]
+    },
+    {
+      "event": "EntryCompleted",
+      "entry_type": "ToolResultEntry",
+      "name": "agents.spawn",
+      "is_error": true,
+      "error_kind": "config",
+      "error_fields": [
+        "name",
+        "config_name",
+        "instructions"
+      ]
+    },
+    {
+      "event": "EntryAdded",
+      "entry_type": "ToolCallEntry",
+      "name": "agents.spawn",
+      "is_error": null,
+      "argument_keys": [
+        "config_name",
+        "message",
+        "name"
+      ],
+      "matches_expected": {
+        "name_FAQ": true,
+        "config_name_FAQ": true,
+        "message_marker": true,
+        "instructions_marker": false
+      }
+    },
+    {
+      "event": "EntryCompleted",
+      "entry_type": "ToolCallEntry",
+      "name": "agents.spawn",
+      "is_error": null,
+      "argument_keys": [
+        "config_name",
+        "message",
+        "name"
+      ],
+      "matches_expected": {
+        "name_FAQ": true,
+        "config_name_FAQ": true,
+        "message_marker": true,
+        "instructions_marker": false
+      }
+    },
+    {
+      "event": "EntryAdded",
+      "entry_type": "ToolResultEntry",
+      "name": "agents.spawn",
+      "is_error": false
+    },
+    {
+      "event": "EntryCompleted",
+      "entry_type": "ToolResultEntry",
+      "name": "agents.spawn",
+      "is_error": false
+    }
+  ],
+  "child_generations_completed": 1,
+  "child_marker_confirmed": true,
+  "result_type": "Completed",
+  "failure_code": null,
+  "children_count": 1,
+  "generation_calls": 5,
+  "elapsed_seconds": 11.3269,
+  "required_check_passed": true
+}

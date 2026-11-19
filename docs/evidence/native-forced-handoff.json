@@ -1,0 +1,67 @@
+{
+  "include_usage_requested": true,
+  "generation_budget": 4,
+  "calls": [
+    {
+      "destination": "http://127.0.0.1:11434/v1/datalake/events",
+      "generation": false,
+      "model": null,
+      "stream_options": null,
+      "tools": []
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions#stream",
+      "generation": true,
+      "model": "mistral:latest",
+      "stream_options": {
+        "include_usage": true
+      },
+      "tools": [
+        "search_tool_functions",
+        "run_typescript",
+        "wait"
+      ]
+    }
+  ],
+  "events": {
+    "Notice": 1,
+    "EntryAdded": 2,
+    "EntryCompleted": 1,
+    "TurnStarted": 1,
+    "SessionUpdated": 1,
+    "TextDelta": 503
+  },
+  "connections": [
+    [
+      "127.0.0.1",
+      11434
+    ],
+    [
+      "127.0.0.1",
+      11434
+    ],
+    [
+      "127.0.0.1",
+      11434
+    ]
+  ],
+  "usage_chunks": [],
+  "versions": {
+    "mistralai": "3.7.0",
+    "mistralai-agents": "1.1.0",
+    "mistralai-vibe-harness": "0.1.19",
+    "mistralai-vibe-sdk": "0.14.6",
+    "httpx2": "2.16.2"
+  },
+  "python": "3.14.7",
+  "exception_type": "TimeoutError",
+  "failure_reason": "",
+  "generation_calls": 1,
+  "probe": "forced-named-child-handoff",
+  "interpretation": "The include_usage transport retry still permits one local root generation, but the forced synthetic FAQ delegation probe timed out before the supervisor completed. No named child turn or continuation was observed. Native local delegation remains blocked and is not implemented in the HTTP route.",
+  "child_generation_calls": 0,
+  "supervisor_continuations": 0,
+  "native_handoff_verified": false,
+  "hosted_inference_used": false,
+  "hosted_key_loaded": false
+}

@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "sdk": "mistralai==3.7.0",
+  "embedding_model": "nomic-embed-text:latest",
+  "chat_model": "mistral:latest",
+  "question": "How long does delivery of printed policy guides take?",
+  "http_status": 200,
+  "response": {
+    "status": "answered",
+    "answer": "Printed policy guides are delivered within five working days.",
+    "citations": [
+      {
+        "title": "Synthetic Policy Guide Delivery",
+        "page": 2,
+        "chunk_id": "delivery-guide-p2-s0-4bc5950c9230"
+      }
+    ]
+  },
+  "http_seconds": 1.293,
+  "chunk_count_before": 2,
+  "chunk_count_after": 2,
+  "stable_ids": [
+    "delivery-guide-p1-s0-8c3321d86f7c",
+    "delivery-guide-p2-s0-4bc5950c9230"
+  ],
+  "total_seconds": 2.673,
+  "regression": {
+    "id": "new-guide-delivery",
+    "question": "How long does delivery of printed policy guides take?",
+    "http_status": 200,
+    "status": "answered",
+    "title": "Synthetic Policy Guide Delivery",
+    "page": 2,
+    "expected_fact": "Delivery within five working days.",
+    "fact_fragments": [
+      "printed policy guides",
+      "five working days"
+    ]
+  },
+  "provenance": "reviewed synthetic transcription; hosted OCR not used",
+  "isolation_unchanged": true
+}

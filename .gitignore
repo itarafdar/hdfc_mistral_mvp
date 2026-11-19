@@ -1,0 +1,28 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+
+# Virtual environments
+.venv
+
+# Local secrets and generated OCR output
+mistral_keys.env
+.env
+*.env
+.env.*
+!.env.example
+artifacts/
+.DS_Store
+scripts/
+
+# Keep only the top-level agent instructions, architecture summary and test docs
+*.md
+!AGENTS.md
+!ARCHITECTURE_SUMMARY.md
+!tests/**/
+!tests/**/*.md

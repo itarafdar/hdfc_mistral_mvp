@@ -1,0 +1,98 @@
+{
+  "model": "mistral-nemo:12b",
+  "include_usage_requested": false,
+  "generation_budget": 4,
+  "calls": [
+    {
+      "destination": "http://127.0.0.1:11434/v1/datalake/events",
+      "generation": false,
+      "model": null,
+      "stream_options": null,
+      "tools": []
+    },
+    {
+      "destination": "http://127.0.0.1:11434/api/chat",
+      "generation": true,
+      "model": "mistral-nemo:12b",
+      "stream_options": null,
+      "tools": [
+        "synthetic_probe"
+      ]
+    },
+    {
+      "destination": "http://127.0.0.1:11434/api/chat",
+      "generation": true,
+      "model": "mistral-nemo:12b",
+      "stream_options": null,
+      "tools": [
+        "synthetic_probe"
+      ]
+    }
+  ],
+  "events": {
+    "Notice": 1,
+    "EntryAdded": 4,
+    "EntryCompleted": 4,
+    "TurnStarted": 1,
+    "SessionUpdated": 1,
+    "TextDelta": 11,
+    "TurnEnded": 1
+  },
+  "native_ollama": true,
+  "merge_system": false,
+  "simple_tool": true,
+  "force_tool_requested": false,
+  "connections": [
+    [
+      "127.0.0.1",
+      11434
+    ],
+    [
+      "127.0.0.1",
+      11434
+    ],
+    [
+      "127.0.0.1",
+      11434
+    ],
+    [
+      "127.0.0.1",
+      11434
+    ]
+  ],
+  "usage_chunks": [
+    {
+      "prompt_eval_count": 252,
+      "eval_count": 18
+    },
+    {
+      "prompt_eval_count": 47,
+      "eval_count": 12
+    }
+  ],
+  "versions": {
+    "mistralai": "3.7.0",
+    "mistralai-agents": "1.1.0",
+    "mistralai-vibe-harness": "0.1.19",
+    "mistralai-vibe-sdk": "0.14.6",
+    "httpx2": "2.16.2"
+  },
+  "python": "3.14.7",
+  "model_available": true,
+  "ollama_version": "0.40.2",
+  "model_digest": "e7e06d107c6c86ed0cf45445f1790720b5092149c4c95f4d965844e9afbfdc89",
+  "root_generations_completed": 2,
+  "entry_names": [
+    "client.synthetic_probe",
+    "client.synthetic_probe",
+    "client.synthetic_probe",
+    "client.synthetic_probe"
+  ],
+  "simple_tool_invocations": 1,
+  "result_type": "Completed",
+  "failure_code": null,
+  "children_count": 0,
+  "generation_calls": 2,
+  "elapsed_seconds": 5.518,
+  "required_check_passed": true
+}

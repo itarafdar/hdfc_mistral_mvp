@@ -1,0 +1,37 @@
+{
+  "model": "ministral-3:14b",
+  "include_usage_requested": false,
+  "generation_budget": 3,
+  "calls": [],
+  "events": {},
+  "native_ollama": true,
+  "merge_system": false,
+  "simple_tool": false,
+  "supervisor_tools_empty": true,
+  "supervisor_max_iterations": 3,
+  "programmatic_tool_calling": false,
+  "force_tool_requested": false,
+  "connections": [
+    [
+      "127.0.0.1",
+      11434
+    ]
+  ],
+  "usage_chunks": [],
+  "versions": {
+    "mistralai": "3.7.0",
+    "mistralai-agents": "1.1.0",
+    "mistralai-vibe-harness": "0.1.19",
+    "mistralai-vibe-sdk": "0.14.6",
+    "httpx2": "2.16.2"
+  },
+  "python": "3.14.7",
+  "model_available": true,
+  "ollama_version": "0.40.2",
+  "model_digest": "129e04c05b562f6e6ea7ec07ef0b0a61ef1aeaedb91ac524e67a1672eba7bb36",
+  "exception_type": "ValidationError",
+  "failure_reason": "Diagnostic did not complete; internal error details withheld.",
+  "generation_calls": 0,
+  "elapsed_seconds": 1.1496,
+  "required_check_passed": false
+}

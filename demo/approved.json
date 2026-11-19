@@ -1,0 +1,26 @@
+[
+  {
+    "document": "statements",
+    "title": "Synthetic Statement Policy",
+    "file": "demo/pdfs/statements.pdf",
+    "sha256": "060b2c891bfc3b6309278d583ea389b4e307ee8ce9d1860e507c2f3099c71945"
+  },
+  {
+    "document": "complaints",
+    "title": "Synthetic Complaint Policy",
+    "file": "demo/pdfs/complaints.pdf",
+    "sha256": "dca7bd84c6e47a4dc7f8c0d90558437c2b777ea9355a9ea34895ec14e60d61e3"
+  },
+  {
+    "document": "accessibility",
+    "title": "Synthetic Accessibility Policy",
+    "file": "demo/pdfs/accessibility.pdf",
+    "sha256": "1cf4e0ded33353355a63bd6041bf26a8a080b34445ef18179061f311e1cb54aa"
+  },
+  {
+    "document": "riverside",
+    "title": "Synthetic Riverside Branch FAQ",
+    "file": "demo/pdfs/riverside.pdf",
+    "sha256": "a8a012fe550581415e02a839ba335ed8d6496231b4d67c7fb09262a6f853806e"
+  }
+]

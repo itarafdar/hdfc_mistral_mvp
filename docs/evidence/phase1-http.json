@@ -1,0 +1,195 @@
+{
+  "orchestration": "independent deterministic API; native delegation blocked",
+  "results": [
+    {
+      "case": "faq-json",
+      "passed": true,
+      "response": {
+        "status": "answered",
+        "answer": "Riverside is open on Saturdays from 10 AM to 2 PM",
+        "citations": [
+          {
+            "title": "Synthetic Riverside Branch FAQ",
+            "page": 1,
+            "chunk_id": "riverside-p1-s0-36f74945688c"
+          }
+        ],
+        "orchestration": "deterministic",
+        "specialist": "FAQ",
+        "model_calls": {
+          "generation": 1,
+          "embedding": 1
+        }
+      },
+      "model_calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/embeddings",
+          "kind": "embedding"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation"
+        }
+      ],
+      "first_progress_seconds": null,
+      "completed_seconds": 1.3595
+    },
+    {
+      "case": "faq-sse",
+      "passed": true,
+      "response": {
+        "status": "answered",
+        "answer": "Riverside is open on Saturdays from 10 AM to 2 PM",
+        "citations": [
+          {
+            "title": "Synthetic Riverside Branch FAQ",
+            "page": 1,
+            "chunk_id": "riverside-p1-s0-36f74945688c"
+          }
+        ],
+        "orchestration": "deterministic",
+        "specialist": "FAQ",
+        "model_calls": {
+          "generation": 1,
+          "embedding": 1
+        }
+      },
+      "model_calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/embeddings",
+          "kind": "embedding"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation"
+        }
+      ],
+      "first_progress_seconds": 0.0012,
+      "completed_seconds": 0.964
+    },
+    {
+      "case": "fallback",
+      "passed": true,
+      "response": {
+        "status": "not_found",
+        "message": "I couldn\u2019t find that in the approved documents.",
+        "citations": [],
+        "orchestration": "deterministic",
+        "specialist": "FAQ",
+        "model_calls": {
+          "generation": 1,
+          "embedding": 1
+        }
+      },
+      "model_calls": [
+        {
+          "destination": "http://127.0.0.1:11434/v1/embeddings",
+          "kind": "embedding"
+        },
+        {
+          "destination": "http://127.0.0.1:11434/v1/chat/completions",
+          "kind": "generation"
+        }
+      ],
+      "first_progress_seconds": null,
+      "completed_seconds": 0.7104
+    },
+    {
+      "case": "cards",
+      "passed": true,
+      "response": {
+        "status": "guidance",
+        "message": "Use the authenticated bank card service, select an eligible card, complete bank-native verification, and confirm temporary deactivation there. No card action has been prepared or executed.",
+        "orchestration": "deterministic",
+        "specialist": "CardsGuidance",
+        "model_calls": {
+          "generation": 0,
+          "embedding": 0
+        }
+      },
+      "model_calls": [],
+      "first_progress_seconds": null,
+      "completed_seconds": 0.0008
+    },
+    {
+      "case": "clarify",
+      "passed": true,
+      "response": {
+        "status": "clarification_required",
+        "message": "Do you need help with a public policy question or temporary card deactivation?",
+        "orchestration": "deterministic",
+        "specialist": "clarify",
+        "model_calls": {
+          "generation": 0,
+          "embedding": 0
+        }
+      },
+      "model_calls": [],
+      "first_progress_seconds": null,
+      "completed_seconds": 0.0005
+    },
+    {
+      "case": "urgent-disabled",
+      "passed": true,
+      "response": {
+        "status": "urgent_support",
+        "message": "Contact urgent card support now. This handoff does not block a card or file a fraud report.",
+        "support_url": "https://www.hdfc.bank.in/credit-cards/block-loststolen-card",
+        "orchestration": "deterministic",
+        "specialist": "urgent",
+        "model_calls": {
+          "generation": 0,
+          "embedding": 0
+        }
+      },
+      "model_calls": [],
+      "first_progress_seconds": null,
+      "completed_seconds": 0.0005
+    },
+    {
+      "case": "fraud-disabled",
+      "passed": true,
+      "response": {
+        "status": "urgent_support",
+        "message": "Contact urgent card support now. This handoff does not block a card or file a fraud report.",
+        "support_url": "https://www.hdfc.bank.in/credit-cards/block-loststolen-card",
+        "orchestration": "deterministic",
+        "specialist": "urgent",
+        "model_calls": {
+          "generation": 0,
+          "embedding": 0
+        }
+      },
+      "model_calls": [],
+      "first_progress_seconds": 0.0005,
+      "completed_seconds": 0.0007
+    }
+  ],
+  "passed": 7,
+  "calls": [
+    {
+      "destination": "http://127.0.0.1:11434/v1/embeddings",
+      "kind": "embedding"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/embeddings",
+      "kind": "embedding"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/embeddings",
+      "kind": "embedding"
+    },
+    {
+      "destination": "http://127.0.0.1:11434/v1/chat/completions",
+      "kind": "generation"
+    }
+  ]
+}
