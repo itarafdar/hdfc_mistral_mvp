@@ -11,7 +11,7 @@ Synthetic FAQ and local native routing work. Studio recovery, live human review 
 Clients use `POST /v1/customer-support`: JSON by default, SSE with `?stream=true`. Mobile/web banking and employee consoles are future interfaces. `POST /v1/faq` provides direct policy answers. Authenticated synthetic submissions return `202`/status URLs; confirmation and reviewer callbacks use authenticated JSON endpoints.
 
 ```mermaid
-flowchart TD
+flowchart LR
     A[API client today / bank channels next] --> B[FastAPI: scan and redact]
     B -->|urgent case| U[Configured urgent support]
     B -->|screened request| W[Studio workflow / bank-hosted worker]
@@ -99,7 +99,7 @@ Rejections use HTTP 422 before streaming, or SSE `final` afterward; dependency f
 The action branch above expands into this flow. Customer confirmation and staff review may arrive in either order; both are required when the threshold is exceeded.
 
 ```mermaid
-flowchart TD
+flowchart LR
     T{"HighStakeTransactions tool prepares action:<br/>saved threshold exceeded?"}
     T -->|yes| N[Workflow activity sends signed webhook]
     T -->|no: confirmation still required| W[Studio waits / no inference]
