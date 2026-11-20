@@ -22,7 +22,7 @@ flowchart TD
     S -->|ambiguous| R
     S --> C[Named specialist / typed Python tool]
     C -->|FAQ or guidance| R
-    C -->|authenticated action| H["HITL: human agent webhook → workflow.wait → API callback<br/>detail below"]
+    C -->|authenticated high-stake action| H["HITL: human agent webhook → workflow.wait → webhook callback"]
     H -->|status polling| R
 ```
 
