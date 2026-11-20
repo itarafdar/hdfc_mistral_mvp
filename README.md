@@ -21,10 +21,12 @@ flowchart TD
     G -->|reject| R[Validated response]
     S -->|ambiguous| R
     S --> C[Named specialist / typed Python tool]
-    C --> R
+    C -->|FAQ or guidance| R
+    C -->|authenticated action| H["HITL: human agent webhook → workflow.wait → API callback<br/>detail below"]
+    H -->|status polling| R
 ```
 
-The supervisor selects one named specialist. Python prevents recursive/parallel handoffs; each specialist has one typed async tool.
+The supervisor selects one named specialist. Python prevents recursive/parallel handoffs; each specialist has one typed async tool to complete the respective action.
 
 **Illustrative customer journeys:** HDFC [statement](https://www.hdfc.bank.in/need-help/net-banking-faqs)/[complaint](https://www.hdfc.bank.in/need-help/grievance-redressal) policies require approval and ingestion. Demo rules are synthetic.
 
@@ -36,7 +38,7 @@ The supervisor selects one named specialist. Python prevents recursive/parallel 
 | “I want to download an account statement.” | **AccountGuidance** | `guidance`: sign in, select account/period and download through the secure service. |
 | “I want to add a beneficiary.” | **PaymentsGuidance** | `guidance`: authenticated beneficiary setup and verification; no beneficiary created. |
 | “I want to update contact details.” | **ProfileGuidance** | `guidance`: secure profile verification and confirmation; no update. |
-| “In the synthetic demo, transfer INR 15000 to demo-beneficiary-a.” | **HighStakeTransactions** | Authenticated submission: `202 processing`; after preparation, `pending_review`, with customer consent still required. |
+| “In the synthetic demo, transfer INR 15000 to demo-beneficiary-a.” | **HighStakeTransactions** | Authenticated submission: `202 processing`; after preparation, `pending_review`, with human hand-off bank's support agent consent is still required. |
 
 Ambiguity prompts clarification. Regex urgency bypasses inference; indirect reports such as “Someone else is spending with my card” use SafetyGuardrail. Both return the configured support link. Semantic detection requires Studio/model availability; neither route executes a card block.
 
@@ -47,14 +49,13 @@ Ambiguity prompts clarification. Regex urgency bypasses inference; indirect repo
 | **Python, FastAPI, Uvicorn; JSON/SSE** | One async API for customer channels, validated responses and progress delivery. |
 | **Mistral Python SDK (`mistralai`)** | Central adapter for OCR, embeddings and chat; consistent model-call controls. |
 | **Mistral Agents SDK** | Native supervisor/specialist handoffs, async tools and hooks enforcing scope/budgets. |
-| **Mistral Studio Workflows SDK** | Durable orchestration, activity history and conditional human waits; live recovery pending. |
+| **Mistral Studio Workflows SDK** | Durable orchestration, activity history, session state management and conditional human waits |
 | **OCR 4.1 / Document AI** | Extract page text and document structure from scanned policies, retaining citation provenance. |
 | **ChromaDB + RAG** | Search approved passages by meaning; ground answers in evidence without retraining for each policy update. |
 | **PostgreSQL + psycopg** | Transactions, locks and uniqueness protect consent, review, idempotency and outbox records across workers. |
 | **Pydantic + Python regex** | Typed input/output contracts and PII screening before inference; bank rules stay enforceable in Python. |
 | **Ministral 3 14B, nomic embeddings, Ollama** | Current private generation/embedding runtime; Mistral SDK access does not make nomic a Mistral model. |
 | **Docker/Compose, Kubernetes** | Repeatable services; EKS/AKS/on-prem serving starter with probes and autoscaling. |
-| **uv/lockfile, dotenv, pytest; Pillow** | Reproducible dependencies, runtime configuration, regression checks and synthetic scanned-PDF creation. |
 
 **Publication sequence—outside customer requests:**
 
@@ -94,6 +95,27 @@ Example exact Python rejection body:
 Rejections use HTTP 422 before streaming, or SSE `final` afterward; dependency failures use `error`. Authenticated requests use `202`/polling. Direct FAQ rejects sensitive input.
 
 **HITL:** Python verifies transfer details and applies the saved threshold—above INR 10,000 in this demo. Studio conditionally sends a signed reviewer webhook and awaits an authenticated decision.
+
+The action branch above expands into this flow. Customer confirmation and staff review may arrive in either order; both are required when the threshold is exceeded.
+
+```mermaid
+flowchart TD
+    T{"HighStakeTransactions tool prepares action:<br/>saved threshold exceeded?"}
+    T -->|yes| N[Workflow activity sends signed webhook]
+    T -->|no: confirmation still required| W[Studio waits / no inference]
+    N -->|notification delivered| W
+    N -->|POST to configured reviewer webhook| H[Human reviewer approves or rejects]
+    H -->|POST /v1/webhooks/human-review/action_id| V["Bank API authenticates reviewer,<br/>validates action and persists decision"]
+    V -->|review_updated signal wakes workflow| W
+    K[Customer confirms exact action] -->|authenticated confirm endpoint| F[Bank API validates and persists consent]
+    F -->|review_updated signal wakes workflow| W
+    W -->|resume or timeout check| P{"Re-read ledger:<br/>consent, review and deadlines"}
+    P -->|still pending| W
+    P -->|accepted with outbox| E[Recheck authority / simulated dispatch]
+    P -->|rejected or expired| X[Stop without execution]
+```
+
+The outgoing webhook targets `DEMO_REVIEW_WEBHOOK_URL` and includes the callback URL. The human-review system calls `POST /v1/webhooks/human-review/{action_id}` with reviewer authentication and the decision; customer consent uses `POST /v1/synthetic-actions/{action_id}/confirm`. Each endpoint persists its validated input in PostgreSQL before sending the `review_updated` wake-up signal to Studio. The signal carries no approval: the workflow re-reads bank-owned state. Only that action workflow waits; other requests continue. Live Studio callback/resume remains unverified.
 
 Webhook delivery grants no approval. Exact consent plus independent staff approval precede atomic acceptance/outbox recording. The resumed workflow rechecks authority before a simulated effect. Human waits consume no inference. Production identity/execution/reconciliation remain future gates.
 
