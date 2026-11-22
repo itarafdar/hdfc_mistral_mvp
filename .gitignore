@@ -15,6 +15,8 @@ uv.lock
 mistral_keys.env
 .env
 *.env
+*.excalidraw
+*.svg
 .env.*
 !.env.example
 artifacts/

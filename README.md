@@ -6,6 +6,9 @@ Mistral Document AI extracts policies, the Agents SDK delegates customer request
 
 Synthetic FAQ and local native routing work. Studio recovery, live human review and Kubernetes still require acceptance. Reduced support demand and faster resolution remain objectives to measure.
 
+
+![alt text](image.png)
+
 ## 1. One entry point, focused specialists
 
 Clients use `POST /v1/customer-support`: JSON by default, SSE with `?stream=true`. Mobile/web banking and employee consoles are future interfaces. `POST /v1/faq` provides direct policy answers. Authenticated synthetic submissions return `202`/status URLs; confirmation and reviewer callbacks use authenticated JSON endpoints.
