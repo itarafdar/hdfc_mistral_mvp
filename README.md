@@ -1,5 +1,11 @@
 # HDFC Retail Banking: Mistral agentic support architecture
 
+## Project need and objective
+
+**Need:** Retail banking customers need consistent policy answers and clear next steps for card, account, payment and profile requests. Helping them resolve routine questions and reach the right support team could reduce repetitive support work and resolution time.
+
+**Objective:** Demonstrate a banking support assistant that answers from approved documents with citations, routes requests to focused specialists, and directs urgent cases to configured support. Validate human approval for high-stake authorized transactions while HDFC retains control of customer authorization and execution. Measure support demand and resolution time to assess the benefit.
+
 **HDFC agentic usecase technology briefing**
 
 Mistral Document AI extracts policies, the Agents SDK delegates customer requests, and Studio Workflows coordinates execution and human approval. HDFC retains authority over identity, consent and banking actions.
